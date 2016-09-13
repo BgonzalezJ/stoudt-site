@@ -1,1 +1,8 @@
+.DS_Store
+/content/plugins/
+/content/languages/
+/content/vendor/
+/media/
+/wp/
+/vendor/
 wp-config.php

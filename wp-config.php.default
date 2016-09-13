@@ -1,0 +1,116 @@
+<?php
+/** 
+ * Configuración básica de WordPress.
+ *
+ * Este archivo contiene las siguientes configuraciones: ajustes de MySQL, prefijo de tablas,
+ * claves secretas, idioma de WordPress y ABSPATH. Para obtener más información,
+ * visita la página del Codex{@link http://codex.wordpress.org/Editing_wp-config.php Editing
+ * wp-config.php} . Los ajustes de MySQL te los proporcionará tu proveedor de alojamiento web.
+ *
+ * This file is used by the wp-config.php creation script during the
+ * installation. You don't have to use the web site, you can just copy this file
+ * to "wp-config.php" and fill in the values.
+ *
+ * @package WordPress
+ */
+
+// ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
+/** El nombre de tu base de datos de WordPress */
+define('DB_NAME', 'chris_stoudt');
+
+/** Tu nombre de usuario de MySQL */
+define('DB_USER', 'root');
+
+/** Tu contraseña de MySQL */
+define('DB_PASSWORD', '');
+
+/** Host de MySQL (es muy probable que no necesites cambiarlo) */
+define('DB_HOST', 'localhost');
+
+/** Codificación de caracteres para la base de datos. */
+define('DB_CHARSET', 'utf8');
+
+/** Cotejamiento de la base de datos. No lo modifiques si tienes dudas. */
+define('DB_COLLATE', '');
+
+/**#@+
+ * Claves únicas de autentificación.
+ *
+ * Define cada clave secreta con una frase aleatoria distinta.
+ * Puedes generarlas usando el {@link https://api.wordpress.org/secret-key/1.1/salt/ servicio de claves secretas de WordPress}
+ * Puedes cambiar las claves en cualquier momento para invalidar todas las cookies existentes. Esto forzará a todos los usuarios a volver a hacer login.
+ *
+ * @since 2.6.0
+ */
+define('AUTH_KEY', 'Ee/!^$s(N6$~`+_sI4e$_E1h!i7&3RANwDK9k1 dO4-nwTd-1v.!FM|A.(qWk+tY'); // Cambia esto por tu frase aleatoria.
+define('SECURE_AUTH_KEY', '|@8at@zO&c(G-{=D9s:`z^*-:9v5u@!+0EA-y1)tmA*1|kFU,RMlC@B,N~@7N#X!'); // Cambia esto por tu frase aleatoria.
+define('LOGGED_IN_KEY', 'b-U#T6OHTm!o&,+en9S.ZEj0nj&djSFB.*;N9[<Dc8:_~wKvMt4={Y^ hX4 tu|)'); // Cambia esto por tu frase aleatoria.
+define('NONCE_KEY', 'lY1-hWtu4}@0Nb9&h3);Y#&~[@-Dwg:O8xI5181<q]>@E]<|{%rB*uKvXuq;08LJ'); // Cambia esto por tu frase aleatoria.
+define('AUTH_SALT', '0.vPyN!Rn&3!,`EyrtLx7{O>bP5TK@xS?pYE_L+%?lu;?g0xcY6+o9CIh(+E!Ivf'); // Cambia esto por tu frase aleatoria.
+define('SECURE_AUTH_SALT', 'kf/LA9GGxPVl)C-w-vl|67(&E?kc/we1_JHhIi+i65+,+2-mWY/uU-V6taH42Aa-'); // Cambia esto por tu frase aleatoria.
+define('LOGGED_IN_SALT', '9B5(?_{uLR||OLm}-`&h%5Q#VuvJn(Su&/<1K-R |d8%f65g$G)5,laYd4mo?NM@'); // Cambia esto por tu frase aleatoria.
+define('NONCE_SALT', 'S2Hu#JBSA}Ak[wx <&LNk=&/E]mSA15s>Ql8M<?nyL3BN}SJdxN!pMr;vQ8w_O,N'); // Cambia esto por tu frase aleatoria.
+
+
+/* Custom WordPress URL. */
+
+define( 'WP_SITEURL',     'http://stoudt.com:8080/wp' );
+define( 'WP_HOME',        'http://stoudt.com:8080' );
+
+define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
+define( 'WP_CONTENT_URL', 'http://stoudt.com:8080/content' );
+
+define( 'UPLOADS',        '../media' );
+define( 'WP_PLUGIN_URL',  'http://stoudt.com:8080/content/plugins' );
+
+define( 'DISALLOW_FILE_EDIT', true);
+define( 'DISALLOW_FILE_MODS', true);
+define( 'RELOCATE', true);
+
+define( 'AUTOMATIC_UPDATER_DISABLED', false );
+define( 'WP_AUTO_UPDATE_CORE', false );
+
+/*define( 'FB_APPID', '703226473030155');
+define( 'FB_SECRET', '09ca67fdcc58d328ab89b1993589fc7f');*/
+
+/**#@-*/
+
+/**
+ * Prefijo de la base de datos de WordPress.
+ *
+ * Cambia el prefijo si deseas instalar multiples blogs en una sola base de datos.
+ * Emplea solo números, letras y guión bajo.
+ */
+$table_prefix  = 'crsstdt_';
+
+/**
+ * Idioma de WordPress.
+ *
+ * Cambia lo siguiente para tener WordPress en tu idioma. El correspondiente archivo MO
+ * del lenguaje elegido debe encontrarse en wp-content/languages.
+ * Por ejemplo, instala ca_ES.mo copiándolo a wp-content/languages y define WPLANG como 'ca_ES'
+ * para traducir WordPress al catalán.
+ */
+define('WPLANG', 'es_ES');
+
+/**
+ * Para desarrolladores: modo debug de WordPress.
+ *
+ * Cambia esto a true para activar la muestra de avisos durante el desarrollo.
+ * Se recomienda encarecidamente a los desarrolladores de temas y plugins que usen WP_DEBUG
+ * en sus entornos de desarrollo.
+ */
+define('WP_DEBUG', false);
+define('WP_DEBUG_LOG', false);
+define('WP_DEBUG_DISPLAY', false);
+define('SAVEQUERIES', true);
+
+/* ¡Eso es todo, deja de editar! Feliz blogging */
+
+/** WordPress absolute path to the Wordpress directory. */
+if ( !defined('ABSPATH') )
+	define('ABSPATH', dirname(__FILE__) . '/');
+
+/** Sets up WordPress vars and included files. */
+require_once(ABSPATH . 'wp-settings.php');
+

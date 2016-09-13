@@ -1,0 +1,46 @@
+.tpl {
+	border-bottom: 2px solid #e3e3e3;
+	padding: 20px 0px;
+}
+
+.tpl textarea {
+	display: block;
+	margin: 15px 0px;
+}
+
+.tpl-add-image {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.tpl img {
+	width: 100%;
+}
+
+.tpl-img-box {
+	max-width: 300px;
+	position: relative;
+	display: inline-block;
+}
+
+.tpl-img-box .remove-img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	opacity: 0;
+	transition: opacity .3s;
+	text-align: center;
+}
+
+.tpl-img-box .remove-img a {
+    margin-top: 15%;
+    display: block;
+    color: #fff;
+}
+
+.tpl-img-box:hover .remove-img {
+	opacity: 1;
+}

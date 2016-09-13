@@ -1,0 +1,117 @@
+#site-header .main-navigation,
+#site-footer .site-footer {
+	margin: 0px;
+}
+
+
+
+.img-parallax {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: 100%;
+	position: absolute;
+	left: 50%;
+	padding: 100%;
+	width: 50%;
+	float: left;
+}
+
+.img-parallax.img1 {
+	background-image: url("../img/parallax/img-1.png");
+}
+
+
+.newyork {
+	background: #f00;
+	overflow: hidden;
+	position: relative;
+	padding: 0px 15px;
+}
+
+.newyork .contenido {
+	width: 50%;
+	float: left;
+}
+
+.projects {
+	height: 500px;
+}
+
+/* Covers */
+
+.cover img {
+	width: 100%;
+}
+
+/* Templates */
+
+.tpl img {
+	width: 100%;
+}
+
+.tpl {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.tpl1 img {
+	max-width: 415px;
+}
+
+.tpl1 .descr-content {
+	display: table;
+}
+
+.tpl1 .descr-content > * {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+	.tpl1 .img-content,
+	.tpl1 .descr-content {
+		text-align: center!important;
+		margin-bottom: 30px;
+	}
+}
+
+.tpl2 .descr-content {
+	margin-bottom: 30px;
+}
+
+.tpl2 .img-content {
+	margin-bottom: 40px;
+}
+
+/* Footer */
+
+#site-footer {
+	background: #fff;
+	border: 0px;
+	padding: 200px 15px 15px;
+	color: #000;
+}
+
+#site-footer .rrss {
+	list-style: none;
+	text-align: center;
+	padding: 0px;
+	margin-bottom: 50px;
+}
+
+#site-footer .rrss li {
+	display: inline-block;
+	margin: 0px 5px;
+	border: 2px solid #999;
+	border-radius: 50%;
+	padding: 5px;
+	width: 40px;
+	height: 40px;
+
+}
+
+#site-footer .rrss li a {
+	color: #999;
+	font-size: 18px;
+}

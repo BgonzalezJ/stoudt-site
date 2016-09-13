@@ -1,0 +1,77 @@
+{
+    "name": "bgonzalez/chris-stoudt",
+    "authors": [ 
+        {
+            "name": "Bastián González",
+            "email": "bastian.gonzalez@wikot.com"
+        }
+    ],
+    "homepage": "https://chrisstoudt.com/",
+    "license": "GPL-2.0",
+    "require": {
+      "wordpress": "4.5.*",
+      "koodimonni-language/core-es_ES": "*",
+      "wpackagist-plugin/contact-form-7": "*",
+      "wpackagist-plugin/wp-smtp": "*",
+      "wpackagist-plugin/wpcustom-category-image": "*"
+
+    },
+    "require-dev": {
+      "wpackagist-plugin/debug-bar"                 : "~0.8",
+      "wpackagist-plugin/debug-bar-console"         : "~0.3",
+      "wpackagist-plugin/theme-check"               : "*",
+      "wpackagist-plugin/theme-switcher-reloaded"   : "*"
+    },
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        },
+        {
+          "type"    : "package", 
+          "package" : {
+            "name"    : "wordpress", 
+            "type"    : "webroot", 
+            "version" : "4.5.3", 
+            "dist"    : {
+              "url"  : "https://github.com/WordPress/WordPress/archive/4.5.3.zip",
+              "type" : "zip" 
+            },
+            "source" : {
+              "url"       : "https://github.com/WordPress/WordPress", 
+              "type"      : "git",
+              "reference" : "4.5.3"
+            },
+            "require" : { 
+              "fancyguy/webroot-installer" : "1.0.0"
+            }
+          }
+        },
+        {
+          "type": "composer",
+          "url": "https://languages.koodimonni.fi"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Acme": "src/"
+        }
+    },
+    "config"      : {
+        "vendor-dir": "content/vendor"
+    },
+    "extra" : { 
+      "installer-paths": {
+        "content/plugins/{$name}/": ["type:wordpress-plugin"],
+        "content/themes/{$name}/": ["type:wordpress-theme"]
+      },
+      "webroot-dir"     : "wp",
+      "webroot-package" : "wordpress",
+      "wordpress-install-dir": "wp",
+      "dropin-paths": {
+        "content/languages/": ["vendor:koodimonni-language"],
+        "content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+        "content/languages/themes/": ["vendor:koodimonni-theme-language"]
+      }
+    }
+}
