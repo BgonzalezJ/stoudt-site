@@ -30,7 +30,7 @@
 		<header role="banner" id="site-header">
 			<div class="row main-navigation">
 				<div>
-					<nav class="navbar navbar-default" role="navigation">
+					<nav id="main-menu" class="navbar navbar-default" role="navigation">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary-collapse">
 								<span class="sr-only"><?php _e('Toggle navigation', 'bootstrap-basic'); ?></span>
@@ -41,7 +41,43 @@
 						</div>
 						
 						<div class="collapse navbar-collapse navbar-primary-collapse">
-							<?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?> 
+							
+							<div class="pull-left brand-name">
+								<span>
+									<?= get_bloginfo(); ?>
+								</span>
+							</div>
+
+							<div class="pull-right menu">
+								<?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?> 
+
+								<ul class="rrss">
+									<li>
+										<a href="https://www.behance.net/chris0013" target="_blank">
+											<i class="fa fa-behance"></i>
+										</a>
+									</li>
+
+									<li>
+										<a href="http://chrisstoudt.tumblr.com/" target="_blank">
+											<i class="fa fa-tumblr"></i>
+										</a>
+									</li>
+
+									<li>
+										<a href="https://www.linkedin.com/in/christian-stoudt-14591b33" target="_blank">
+											<i class="fa fa-linkedin"></i>
+										</a>
+									</li>
+
+									<li>
+										<a href="https://www.instagram.com/chrisstoudt_sketchbook/" target="_blank">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+
 							<?php dynamic_sidebar('navbar-right'); ?> 
 						</div><!--.navbar-collapse-->
 					</nav>
