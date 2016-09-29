@@ -5,6 +5,24 @@
 
  jQuery(function ($){
 
+ 	// Menu
+
+ 	function showMenu() {
+ 		if ($(window).scrollTop() > 50)
+ 			$("#main-menu").addClass("show");
+ 		else
+ 			$("#main-menu").removeClass("show");
+ 	}
+
+ 	showMenu();
+
+ 	$(window).scroll(function (e){
+ 		showMenu();
+ 	});
+
+
+
+
  	$.each($(".tpl1"), function () {
  		var _this = this;
  		$(_this).find("img").ready(function (){

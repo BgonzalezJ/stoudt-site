@@ -3,41 +3,6 @@
 	margin: 0px;
 }
 
-
-
-.img-parallax {
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: 50%;
-	background-position: 100%;
-	position: absolute;
-	left: 50%;
-	padding: 100%;
-	width: 50%;
-	float: left;
-}
-
-.img-parallax.img1 {
-	background-image: url("../img/parallax/img-1.png");
-}
-
-
-.newyork {
-	background: #f00;
-	overflow: hidden;
-	position: relative;
-	padding: 0px 15px;
-}
-
-.newyork .contenido {
-	width: 50%;
-	float: left;
-}
-
-.projects {
-	height: 500px;
-}
-
 /* Covers */
 
 .cover img {
@@ -94,12 +59,23 @@
     border-color: transparent;
     border: 0px;
     margin-bottom: 0px;
-    max-height: 50px;
+    /*max-height: 50px;*/
+    height: 100px;
     overflow: hidden;
     position: fixed;
     z-index: 999;
     width: 100%;
     background: #fff;
+    top: -100px;
+    transition: top .5s;
+}
+
+#main-menu.show {
+	top: 0px;
+}
+
+#main-menu a {
+	color: #999;
 }
 
 #main-menu .navbar-collapse {
@@ -118,6 +94,12 @@
 	float: left;
 	position: relative;
     display: block;
+}
+
+#main-menu .navbar-collapse div > ul li a {
+	background: transparent!important;
+	webkit-box-shadow: none;
+	box-shadow: none;
 }
 
 #main-menu .brand-name {
@@ -176,6 +158,137 @@
 	#main-menu .rrss li {
 		display: inline-block!important;
 	}
+}
+
+/* Content */
+
+#content {
+	/*margin-top: 50px;*/
+}
+
+/* Home */
+
+.home-cover {
+	position: relative;
+	max-height: 500px;
+	overflow: hidden;
+	text-align: center;
+	background: #fde03e;
+	margin-bottom: 80px;
+}
+
+.home-cover div.cover {
+	background: url(../img/home-cover.png);
+	background-attachment: fixed;
+    /*background-position: center 45px;*/
+    background-position: center 0px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.home-cover div.cover:before {
+	content: '';
+	display: block;
+	padding-top: 61%;
+}
+
+@media (max-width: 767px) {
+	.home-cover div.cover {
+		background-size: 85%;
+	}
+}
+
+.home-cover img.wave {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 666;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.home-cover div.wave {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 666;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: url(../img/wave-1920.png);
+	background-size: contain;
+}
+
+.home-cover div.wave:before {
+	padding-top: 3%;
+	content: '';
+	display: block;
+}
+
+.projects .intro ul {
+	padding-left: 0px;
+}
+
+.projects .intro ul li {
+	display: inline-block;
+	margin: 0px 5px;
+}
+
+.projects .list-projects {
+	margin-top: 100px;
+}
+
+.projects .list-projects ul {
+	padding-left: 0px;
+	list-style: none;
+}
+
+.projects .list-projects ul .cover-project {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+}
+
+.projects .list-projects ul .cover-project:before {
+	padding-top: 75%;
+	content: '';
+	display: block;
+}
+
+.projects .list-projects ul .cover-project img {
+	/*width: 100%;*/
+	/*height: auto;*/
+	width: auto;
+	height: 100%;
+	position: absolute;
+	bottom: 0px;
+	top: 0px;
+	right: -100%;
+	margin: auto;
+}
+
+.projects .list-projects ul .cover-project .info {
+	position: absolute;
+    z-index: 999;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    background: rgba(0,0,0,0.5);
+    transform: scale(0);
+    transition: transform .3s;
+    color: #fff;
+    font-size: 24px;
+}
+
+.projects .list-projects ul .cover-project:hover .info {
+	transform: scale(1);
 }
 
 /* Footer */

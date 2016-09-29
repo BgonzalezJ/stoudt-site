@@ -7,56 +7,50 @@
 <?php get_header(); ?>
 
 
-
-<div class="newyork">
-	<div class="contenido">
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
+<div class="home-cover">
+	<div class="cover">
 	</div>
-	<div class="img-parallax img1"></div>
+	<div class="wave"></div>
 </div>
 
-<div class="projects"></div>
-
-<div class="newyork">
-	<div class="contenido">
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
+<section class="projects">
+	<div class="intro text-center">
+		<ul>
+			<li>UI/UX DESIGN</li>
+			<li>WEBSITES</li>
+			<li>BRANDING</li>
+			<li>ILLUSTRATION</li>
+		</ul>
 	</div>
-	<div class="img-parallax img1"></div>
-</div>
 
-<div class="projects"></div>
 
-<div class="newyork">
-	<div class="contenido">
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
-		<p>
-			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-		</p>
+	<div class="list-projects container">
+		<?php 
+			$projects = get_posts([
+				'numberposts' => 20,
+				'post_type' => 'post'
+			]);
+		?>
+		<ul class="row">
+			<?php foreach ($projects as $project): ?>
+				<li class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
+					<a href="<?= get_permalink($project->ID); ?>">
+						<div class="cover-project">
+							<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id($project->ID), 'full' )[0] ?>" class="imagen">
+
+							<div class="info">
+								<p class="text-center">
+									<span><?= $project->post_title ?></span>
+								</p>
+							</div>
+
+						</div>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 	</div>
-	<div class="img-parallax img1"></div>
-</div>
 
-
+</section>
 
 <?php get_footer(); ?>

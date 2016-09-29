@@ -77,5 +77,33 @@ $tpls = StoudtTemplates::get_templates(get_the_ID());
 
 <?php endforeach; ?>
 
+<?php 
+	$projects = get_posts([
+		'numberposts' => 4,
+		'post_type' => 'post',
+		'order' => 'rand',
+		'exclude' => [get_the_ID()]
+	]);
+?>
+
+<section id="more-projects">
+	<header>
+		<h2 class="text-center">More Projects</h2>
+	</header>
+
+	<ul>
+		<?php foreach ($projects as $project): ?>
+		<li class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
+			<a href="<?= get_permalink($project->ID); ?>">
+				<div class="cover-project">
+					<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id($project->ID), 'medium' )[0] ?>" class="imagen">
+				</div>
+			</a>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+</section>
+
+
 
 <?php get_footer(); ?> 

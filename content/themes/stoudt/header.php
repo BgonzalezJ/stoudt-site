@@ -44,7 +44,9 @@
 							
 							<div class="pull-left brand-name">
 								<span>
-									<?= get_bloginfo(); ?>
+									<a href="<?= home_url("/"); ?>">
+										<?= get_bloginfo();?>
+									</a>
 								</span>
 							</div>
 
