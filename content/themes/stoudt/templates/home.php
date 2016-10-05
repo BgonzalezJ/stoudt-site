@@ -7,18 +7,17 @@
 <?php get_header(); ?>
 
 
-<div class="home-cover">
-	<div class="cover">
-	</div>
+<div class="home-cover cover">
+	<div class="cover"></div>
 	<div class="wave"></div>
 </div>
 
 <section class="projects">
 	<div class="intro text-center">
 		<ul>
-			<li>UI/UX DESIGN</li>
-			<li>WEBSITES</li>
-			<li>BRANDING</li>
+			<li class="bullet">UI/UX DESIGN</li>
+			<li class="bullet">WEBSITES</li>
+			<li class="bullet">BRANDING</li>
 			<li>ILLUSTRATION</li>
 		</ul>
 	</div>
@@ -32,6 +31,7 @@
 			]);
 		?>
 		<ul class="row">
+			<?php $i = 0; while ($i < 10): $i++; ?>
 			<?php foreach ($projects as $project): ?>
 				<li class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
 					<a href="<?= get_permalink($project->ID); ?>">
@@ -48,6 +48,7 @@
 					</a>
 				</li>
 			<?php endforeach; ?>
+			<?php endwhile; ?>
 		</ul>
 	</div>
 

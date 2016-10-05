@@ -32,6 +32,16 @@
 				<div>
 					<nav id="main-menu" class="navbar navbar-default" role="navigation">
 						<div class="navbar-header">
+
+							<div class="pull-left brand-name-mobile visible-xs">
+								<span>
+									<a href="<?= home_url("/"); ?>">
+										<?= get_bloginfo();?>
+									</a>
+								</span>
+							</div>
+
+
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary-collapse">
 								<span class="sr-only"><?php _e('Toggle navigation', 'bootstrap-basic'); ?></span>
 								<span class="icon-bar"></span>
@@ -42,7 +52,7 @@
 						
 						<div class="collapse navbar-collapse navbar-primary-collapse">
 							
-							<div class="pull-left brand-name">
+							<div class="pull-left brand-name hidden-xs">
 								<span>
 									<a href="<?= home_url("/"); ?>">
 										<?= get_bloginfo();?>
