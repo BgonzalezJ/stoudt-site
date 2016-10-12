@@ -13,9 +13,12 @@
 				<div id="footer-row" class="row site-footer">
 					<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 
-						<p class="text-center">
-							You can follow me on
-						</p>
+						<ul class="skills">
+							<li class="bullet">UI/UX DESIGN</li>
+							<li class="bullet">WEBSITES</li>
+							<li class="bullet">BRANDING</li>
+							<li>ILLUSTRATION</li>
+						</ul>
 
 						<ul class="rrss">
 							<li>
@@ -43,8 +46,13 @@
 							</li>
 						</ul>
 
-						<p class="text-center">
-							Chris Stoudt 2016 all rights reserved yo!
+						<p class="text-center download-portfolio">
+							<a href="#">Download my portfolio</a>
+						</p>
+
+
+						<p class="text-center developed-by">
+							<span>Developed by Bastián González</span>
 						</p>
 
 					</div>

@@ -10,7 +10,12 @@
  	fntimeout_menu = null;
 
  	function showMenu() {
- 		var cover = $("#content > .cover").outerHeight();
+ 		var wave = $(".home-cover .wave");
+ 		if (wave)
+ 			wave = wave.height();
+ 		else
+ 			wave = 0;
+ 		var cover = $("#content > .cover").outerHeight() - wave;
  		var scroll = $(window).scrollTop();
  		if (scroll > cover){
  			if (fntimeout_menu == null) {

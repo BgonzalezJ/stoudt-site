@@ -1,3 +1,9 @@
+html, body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #999;
+}
+
 #site-header .main-navigation,
 #site-footer .site-footer {
 	margin: 0px;
@@ -15,13 +21,17 @@ a {
 
 /* Templates */
 
+.tpl {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
 .tpl img {
 	width: 100%;
 }
 
-.tpl {
-	padding-top: 30px;
-	padding-bottom: 30px;
+.tpl p {
+	line-height: 1.8em;
 }
 
 .tpl1 img {
@@ -50,7 +60,7 @@ a {
 }
 
 .tpl2 .descr-content p {
-	max-width: 350px;
+	max-width: 500px;
 	margin: auto;
 }
 
@@ -68,20 +78,21 @@ a {
     border-color: transparent;
     border: 0px;
     margin-bottom: 0px;
-    max-height: 50px;
+    max-height: 100px;
     height: 100px;
     overflow: hidden;
     position: fixed;
     z-index: 999;
     width: 100%;
-    background: #fff;
     top: 0px;
     transition: top .5s, max-height .5s;
+    background: transparent;
 }
 
 #main-menu.fixed {
-	top: -100px;
-	max-height: 100px;
+	top: -50px;
+	max-height: 50px;
+	background: #fff;
 }
 
 #main-menu.fixed.show {
@@ -90,7 +101,7 @@ a {
 }
 
 #main-menu a {
-	color: #999;
+	color: #000;
 }
 
 #main-menu .navbar-collapse {
@@ -113,33 +124,36 @@ a {
 
 #main-menu .navbar-collapse div > ul li a {
 	background: transparent!important;
-	webkit-box-shadow: none;
+	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
 #main-menu .brand-name {
+	padding: 28px 0px;
+    font-size: 28px;
+    transition: font-size .2s;
+    text-transform: uppercase;
+}
+
+#main-menu.fixed .brand-name {
 	padding: 5px 0px;
 	font-size: 28px;
 	transition: padding .3s;
 }
 
-#main-menu.fixed .brand-name {
-	padding: 28px 0px;
-    font-size: 28px;
-    transition: font-size .2s;
-}
-
 #main-menu .brand-name-mobile {
     padding: 8px 25px;
     font-size: 24px;
+    text-transform: uppercase;
 }
 
 #main-menu .menu {
+	padding: 22px 0px;
 	transition: padding .3s;
 }
 
 #main-menu.fixed .menu {
-	padding: 22px 0px;
+	padding: 0px;	
 }
 
 #main-menu .rrss {
@@ -149,7 +163,7 @@ a {
 #main-menu .rrss li {
 	display: inline-block;
     margin: 0px 5px;
-    border: 2px solid #999;
+    border: 2px solid #000;
     border-radius: 50%;
     padding: 3px 5px;
     width: 30px;
@@ -160,13 +174,13 @@ a {
 }
 
 #main-menu .rrss li a {
-	color: #999;
+	color: #000;
 	font-size: 14px;
 
 }
 
 #main-menu .rrss li:hover {
-	background: #999;
+	background: #000;
 }
 #main-menu .rrss li:hover a {
 	color: #fff;
@@ -178,6 +192,7 @@ a {
 		max-height: inherit!important;
 		height: auto!important;
 		top: 0px!important;
+		background: #fff;
 	}
 
 	#main-menu .brand-name,
@@ -206,12 +221,6 @@ a {
 	}
 }
 
-/* Content */
-
-#content {
-	margin-top: 50px;
-}
-
 /* Home */
 
 .home-cover {
@@ -226,9 +235,7 @@ a {
 .home-cover div.cover {
 	background: url(../img/home-cover.png);
 	background-attachment: fixed;
-    background-position: center 45px;
-    /*background-position: center 0px;*/
-    /*background-position: center 25px;*/
+    background-position: center 75px;
     background-repeat: no-repeat;
     background-size: auto;
     width: 100%;
@@ -244,7 +251,8 @@ a {
 
 @media (max-width: 767px) {
 	.home-cover div.cover {
-		background-size: 85%;
+		background-size: 75%;
+		background-position: center 65px;
 	}
 }
 
@@ -274,27 +282,6 @@ a {
 	padding-top: 3%;
 	content: '';
 	display: block;
-}
-
-.projects .intro ul {
-	padding-left: 0px;
-}
-
-.projects .intro ul li {
-	display: inline-block;
-	margin: 0px 5px;
-}
-
-.projects .intro ul li.bullet:after {
-	display: inline-block;
-	content: '';
-	border-radius: 50%;
-	background: #000;
-	height: 5px;
-	width: 5px;
-	vertical-align: middle;
-    margin-top: -3px;
-    margin-left: 12px;
 }
 
 .projects .list-projects {
@@ -333,14 +320,11 @@ a {
 }
 
 .projects .list-projects ul .cover-project img {
-	/*width: 100%;*/
-	/*height: auto;*/
 	width: auto;
 	height: 100%;
 	position: absolute;
 	bottom: 0px;
 	top: 0px;
-	right: -100%;
 	margin: auto;
 }
 
@@ -353,15 +337,34 @@ a {
     height: 100%;
     left: 0px;
     right: 0px;
-    background: rgba(0,0,0,0.5);
-    transform: scale(0);
-    transition: transform .3s;
+    background: rgba(0,0,0,0.7);
+    transition: opacity .3s;
     color: #fff;
     font-size: 24px;
+    opacity: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.projects .list-projects ul .cover-project .info p {
+	border-left: 2px solid #fff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.projects .list-projects ul .cover-project .info p span {
+	display: block;
+	margin: 0px 10px;
+	font-weight: bold;
+}
+
+.projects .list-projects ul .cover-project .info p .subtitle {
+	font-size: 14px;
+	font-weight: 300;
 }
 
 .projects .list-projects ul .cover-project:hover .info {
-	transform: scale(1);
+	opacity: 1;
 }
 
 @media (max-width: 767px) {
@@ -390,15 +393,15 @@ a {
 #site-footer {
 	background: #fff;
 	border: 0px;
-	padding: 200px 15px 15px;
-	color: #000;
+	padding: 100px 15px 5px;
 }
 
 #site-footer .rrss {
 	list-style: none;
 	text-align: center;
 	padding: 0px;
-	margin-bottom: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 #site-footer .rrss li {
@@ -424,4 +427,38 @@ a {
 
 #site-footer .rrss li:hover a {
 	color: #fff;
+}
+
+#site-footer .download-portfolio {
+	margin-bottom: 50px;
+}
+
+#site-footer .download-portfolio a {
+	color: #999;
+	font-size: 18px;
+}
+
+/* Skills */
+
+ul.skills {
+	padding-left: 0px;
+	text-align: center;
+}
+
+ul.skills li {
+	display: inline-block;
+	margin: 0px 5px;
+	font-size: 18px;
+}
+
+ul.skills li.bullet:after {
+	display: inline-block;
+	content: '';
+	border-radius: 50%;
+	background: #999;
+	height: 5px;
+	width: 5px;
+	vertical-align: middle;
+    margin-top: -3px;
+    margin-left: 12px;
 }
