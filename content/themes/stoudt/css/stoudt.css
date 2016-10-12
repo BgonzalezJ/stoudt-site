@@ -193,6 +193,7 @@ a {
 		height: auto!important;
 		top: 0px!important;
 		background: #fff;
+		box-shadow: 0px 5px 30px #e9e9e9;
 	}
 
 	#main-menu .brand-name,
@@ -218,6 +219,10 @@ a {
 
 	#main-menu .rrss li {
 		display: inline-block!important;
+	}
+
+	#content {
+		margin-top: 50px;
 	}
 }
 
@@ -251,8 +256,7 @@ a {
 
 @media (max-width: 767px) {
 	.home-cover div.cover {
-		background-size: 75%;
-		background-position: center 65px;
+		background-size: 85%;
 	}
 }
 
@@ -298,8 +302,6 @@ a {
 	transition: margin-top .7s, opacity .7s;
 	opacity: 0;
 	padding: 0px;
-	max-width: 315px;
-	max-height: 193px;
 }
 
 .projects .list-projects ul li.show {
@@ -307,78 +309,18 @@ a {
 	opacity: 1;
 }
 
-.projects .list-projects ul .cover-project {
-	overflow: hidden;
-	width: 100%;
-	position: relative;
-}
-
-.projects .list-projects ul .cover-project:before {
-	padding-top: 61.26%;
-	content: '';
-	display: block;
-}
-
-.projects .list-projects ul .cover-project img {
-	width: auto;
-	height: 100%;
-	position: absolute;
-	bottom: 0px;
-	top: 0px;
-	margin: auto;
-}
-
-.projects .list-projects ul .cover-project .info {
-	position: absolute;
-    z-index: 555;
-    top: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    right: 0px;
-    background: rgba(0,0,0,0.7);
-    transition: opacity .3s;
-    color: #fff;
-    font-size: 24px;
-    opacity: 0;
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-.projects .list-projects ul .cover-project .info p {
-	border-left: 2px solid #fff;
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
-
-.projects .list-projects ul .cover-project .info p span {
-	display: block;
-	margin: 0px 10px;
-	font-weight: bold;
-}
-
-.projects .list-projects ul .cover-project .info p .subtitle {
-	font-size: 14px;
-	font-weight: 300;
-}
-
-.projects .list-projects ul .cover-project:hover .info {
-	opacity: 1;
-}
-
 @media (max-width: 767px) {
-	.projects .intro ul li {
-		margin: 5px 0px;
-		display: block;
+
+	.home-cover {
+		margin-bottom: 30px;
 	}
 
-	.projects .intro ul li.bullet:after {
-		display: none;
+	.projects .list-projects {
+		margin-top: 30px;
 	}
 
-	.projects .list-projects ul li {
-		margin: 10px 0px;
+	.projects .list-projects ul {
+		padding: 0px 5px;
 	}
 }
 
@@ -388,12 +330,47 @@ a {
 	max-width: 767px;
 }
 
+/* More Projects */
+
+#more-projects header {
+	margin: 40px auto;
+}
+
+#more-projects header h2 {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+#more-projects ul {
+	padding: 0px 15px;
+	margin: 0px;
+	list-style: none;
+}
+
+#more-projects ul li {
+	padding: 0px;
+	transition: margin-left .3s;
+}
+
+@media (max-width: 767px) {
+	#more-projects .wrapper {
+		position: relative;
+		overflow: hidden;
+	}
+
+	#more-projects .wrapper ul {
+		position: absolute;
+		left: 0px;
+		width: 100%;
+	}
+}
+
 /* Footer */
 
 #site-footer {
 	background: #fff;
 	border: 0px;
-	padding: 100px 15px 5px;
+	padding: 100px 0px 10px;
 }
 
 #site-footer .rrss {
@@ -461,4 +438,78 @@ ul.skills li.bullet:after {
 	vertical-align: middle;
     margin-top: -3px;
     margin-left: 12px;
+}
+
+@media (max-width: 767px) {
+	ul.skills li {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 430px) {
+	ul.skills li {
+		font-size: 9px;
+	}	
+}
+
+/* Home and more projects */
+
+.cover-project {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+}
+
+.cover-project:before {
+	padding-top: 61.26%;
+	content: '';
+	display: block;
+}
+
+.cover-project img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	bottom: 0px;
+	top: 0px;
+	margin: auto;
+}
+
+.cover-project .info {
+	position: absolute;
+    z-index: 555;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    background: rgba(0,0,0,0.7);
+    transition: opacity .3s;
+    color: #fff;
+    font-size: 24px;
+    opacity: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.cover-project .info p {
+	border-left: 2px solid #fff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.cover-project .info p span {
+	display: block;
+	margin: 0px 10px;
+	font-weight: bold;
+}
+
+.cover-project .info p .subtitle {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.cover-project:hover .info {
+	opacity: 1;
 }

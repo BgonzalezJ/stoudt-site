@@ -32,13 +32,13 @@
 				"orderby" => "post_date"
 			];
 
-		$projects = new WP_Query($args);
+			$projects = new WP_Query($args);
 		?>
 		<ul class="row">
 			<?php if ($projects->have_posts()): ?>
 			<?php $i = 0; while ($i < 10): $i++; ?>
 			<?php while ($projects->have_posts()): $projects->the_post(); ?>
-				<li class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
+				<li class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 					<a href="<?= get_permalink(); ?>">
 						<div class="cover-project">
 							<?php if (class_exists('MultiPostThumbnails')):

@@ -11,15 +11,15 @@
 			
 			<footer id="site-footer" role="contentinfo">
 				<div id="footer-row" class="row site-footer">
+
+					<ul class="skills">
+						<li class="bullet">UI/UX DESIGN</li>
+						<li class="bullet">WEBSITES</li>
+						<li class="bullet">BRANDING</li>
+						<li>ILLUSTRATION</li>
+					</ul>
+
 					<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-
-						<ul class="skills">
-							<li class="bullet">UI/UX DESIGN</li>
-							<li class="bullet">WEBSITES</li>
-							<li class="bullet">BRANDING</li>
-							<li>ILLUSTRATION</li>
-						</ul>
-
 						<ul class="rrss">
 							<li>
 								<a href="https://www.behance.net/chris0013" target="_blank">
@@ -49,7 +49,6 @@
 						<p class="text-center download-portfolio">
 							<a href="#">Download my portfolio</a>
 						</p>
-
 
 						<p class="text-center developed-by">
 							<span>Developed by Bastián González</span>

@@ -78,32 +78,55 @@ $tpls = StoudtTemplates::get_templates(get_the_ID());
 <?php endforeach; ?>
 
 <?php 
-	$projects = get_posts([
-		'numberposts' => 4,
-		'post_type' => 'post',
-		'order' => 'rand',
-		'exclude' => [get_the_ID()]
-	]);
+	$args = [
+		"post_type" => "post",
+		"posts_per_page" => 4,
+		"post_status" => "publish",
+		"orderby" => "rand",
+		"post__not_in" => [get_the_ID()]
+	];
+
+	$projects = new WP_Query($args);
 ?>
 
-<section id="more-projects">
+<div id="more-projects">
 	<header>
 		<h2 class="text-center">More Projects</h2>
 	</header>
 
-	<ul>
-		<?php foreach ($projects as $project): ?>
-		<li class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
-			<a href="<?= get_permalink($project->ID); ?>">
-				<div class="cover-project">
-					<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id($project->ID), 'medium' )[0] ?>" class="imagen">
-				</div>
-			</a>
-		</li>
-		<?php endforeach; ?>
-	</ul>
-</section>
+	<div class="wrapper">
+		<ul class="row">
+			<?php if ($projects->have_posts()): ?>
+			<?php $i = 0; while ($i < 4): $i++; ?>
+			<?php while ($projects->have_posts()): $projects->the_post(); ?>
+			<li class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
+				<a href="<?= get_permalink(); ?>">
+					<div class="cover-project">
+						<?php if (class_exists('MultiPostThumbnails')):
+						    MultiPostThumbnails::the_post_thumbnail(
+						        get_post_type(),
+						        'secondary-image'
+						    );
+						endif; ?>
 
+						<div class="info">
+							<p>
+								<span class="title"><?= get_the_title(); ?></span>
+								<span class="subtitle"><?= get_the_subtitle(get_the_ID()); ?></span>
+							</p>
+						</div>
+					</div>
+				</a>
+			</li>
+			<?php endwhile; ?>
+			<?php endwhile; ?>
+			<?php endif; ?>
+		</ul>
+	</div>
+</div>
+
+<script src="<?= get_template_directory_uri() ?>/js/jquery.touchSwipe.min.js"></script>
+<script src="<?= get_template_directory_uri() ?>/js/projects.js"></script>
 
 
 <?php get_footer(); ?> 

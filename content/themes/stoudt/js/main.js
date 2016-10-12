@@ -10,26 +10,23 @@
  	fntimeout_menu = null;
 
  	function showMenu() {
- 		var wave = $(".home-cover .wave");
- 		if (wave)
- 			wave = wave.height();
- 		else
- 			wave = 0;
- 		var cover = $("#content > .cover").outerHeight() - wave;
- 		var scroll = $(window).scrollTop();
- 		if (scroll > cover){
- 			if (fntimeout_menu == null) {
-	 			$("#main-menu").addClass("fixed");
-	 			fntimeout_menu = setTimeout(function() {
-	 				$("#main-menu").addClass("show");
-	 				clearTimeout(fntimeout_menu);
-	 				fntimeout_menu = null;
-	 			}, 300);
- 			}
- 		} else {
- 			clearTimeout(fntimeout_menu);
-	 		fntimeout_menu = null;
- 			$("#main-menu").removeClass("show").removeClass("fixed");
+ 		if ($(window).width() > 767){
+	 		var cover = $("#content > .cover").outerHeight() - 40;
+	 		var scroll = $(window).scrollTop();
+	 		if (scroll >= cover){
+	 			if (fntimeout_menu == null) {
+		 			$("#main-menu").addClass("fixed");
+		 			fntimeout_menu = setTimeout(function() {
+		 				$("#main-menu").addClass("show");
+		 				clearTimeout(fntimeout_menu);
+		 				fntimeout_menu = null;
+		 			}, 300);
+	 			}
+	 		} else {
+	 			clearTimeout(fntimeout_menu);
+		 		fntimeout_menu = null;
+	 			$("#main-menu").removeClass("show").removeClass("fixed");
+	 		}
  		}
  	}
 
