@@ -165,25 +165,24 @@ a {
     margin: 0px 5px;
     border: 2px solid #000;
     border-radius: 50%;
-    padding: 3px 5px;
     width: 30px;
     height: 30px;
     text-align: center;
-    transition: background .3s;
     cursor: pointer;
+    transition: border-color .3s;
 }
 
 #main-menu .rrss li a {
 	color: #000;
-	font-size: 14px;
-
+	font-size: 18px;
+	transition: color .3s;
 }
 
 #main-menu .rrss li:hover {
-	background: #000;
+	border-color: #000;
 }
 #main-menu .rrss li:hover a {
-	color: #fff;
+	color: #000;
 }
 
 @media (max-width: 767px) {
@@ -386,24 +385,31 @@ a {
 	margin: 0px 5px;
 	border: 2px solid #999;
 	border-radius: 50%;
-	padding: 5px;
 	width: 40px;
 	height: 40px;
-	transition: background .3s;
 	cursor: pointer;
+	transition: border-color .3s;
+	text-align: center;
 }
 
 #site-footer .rrss li a {
 	color: #999;
-	font-size: 18px;
+	font-size: 22px;
+	display: block;
+	height: 100%;
+	transition: color .3s;
+}
+
+#site-footer .rrss li a i {
+	vertical-align: middle;
 }
 
 #site-footer .rrss li:hover {
-	background: #999;
+	border-color: #000;
 }
 
 #site-footer .rrss li:hover a {
-	color: #fff;
+	color: #000;
 }
 
 #site-footer .download-portfolio {
@@ -413,6 +419,12 @@ a {
 #site-footer .download-portfolio a {
 	color: #999;
 	font-size: 18px;
+}
+
+@media (max-width: 767px) {
+	#site-footer {
+		padding-top: 50px;
+	}
 }
 
 /* Skills */
