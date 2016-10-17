@@ -362,6 +362,10 @@ a {
 		left: 0px;
 		width: 100%;
 	}
+
+	#more-projects .wrapper ul li {
+		margin-right: 15px;
+	}
 }
 
 /* Footer */
