@@ -5,7 +5,7 @@ jQuery(document).ready(function ($){
 
 	var swipe_more_projects = function () {
 		if ($(window).width() < 768) {
-			projects.width(wrapper.find("ul").width() * 0.8);
+			projects.width(wrapper.width() * 0.8);
 			wrapper.height(projects.height());
 			wrapper.find("ul").width(wrapper.width() * projects.length);
 		} else {
