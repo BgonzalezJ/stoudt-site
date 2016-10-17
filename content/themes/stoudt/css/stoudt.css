@@ -368,6 +368,22 @@ a {
 	}
 }
 
+/* About */
+
+#about {
+	margin-top: 150px;
+}
+
+#about .text {
+	margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+	#about .text {
+		text-align: center!important;
+	}
+}
+
 /* Footer */
 
 #site-footer {

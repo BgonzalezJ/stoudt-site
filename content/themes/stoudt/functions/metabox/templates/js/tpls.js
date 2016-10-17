@@ -1,6 +1,7 @@
 jQuery(function ($) {
 
-	tinymce.init({selector: "textarea"});
+	if (typeof tinymce != "undefined")
+		tinymce.init({selector: "textarea"});
 
 	var image_frame;
 

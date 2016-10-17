@@ -12,3 +12,4 @@
 
 
 	require get_template_directory() . '/functions/metabox/templates/index.php';
+	require get_template_directory() . '/functions/admin-panels/index.php';
