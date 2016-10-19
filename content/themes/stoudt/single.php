@@ -15,67 +15,27 @@ $tpls = StoudtTemplates::get_templates(get_the_ID());
 	<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" />
 </header>
 
-<?php foreach ($tpls as $tpl): $tpl = (object) $tpl; ?>
+<?php
+	foreach ($tpls as $tpl): $tpl = (object) $tpl;
+		switch ($tpl->tpl) {
+			case 'tpl1': require 'project_templates/tpl1.php'; break;
+			case 'tpl2': require 'project_templates/tpl2.php'; break;
+			case 'tpl3': require 'project_templates/tpl3.php'; break;
+			case 'tpl4': break;
+			case 'tpl5': break;
+		}
+	endforeach;
+?>
 
-	<?php switch ($tpl->tpl) {
-		case 'tpl1':
-	?>
-		<div class="container tpl tpl1">
-			<div class="row">
-				<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12 text-right img-content">
-					<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" />	
-				</div>
+<?php if (!empty(get_field("_link_to_another_site"))): ?>
+	<div class="text-center">
+		<a href="<?= get_field("_link_to_another_site") ?>" class="link-to-another-site" target="_blank">
+			<?= get_field("_text_button"); ?>
+		</a>
+	</div>
+<?php endif; ?>
 
-				<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12 text-left descr-content">
-					<?= $tpl->descr; ?>
-				</div>
-			</div>
-		</div>
 
-	<?php
-			break;
-
-		case 'tpl2':
-	?>
-		<div class="container tpl tpl2">
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 text-center descr-content">
-					<?= $tpl->descr; ?>
-				</div>
-
-				<?php foreach ($tpl->img as $k => $img): ?>
-				<?php 
-					$class = "col-md-6 col-sm-6 col-lg-6 col-xs-12 img-content";
-					if (($k + 1) % 3 == 0)
-						$class = "col-md-12 col-sm-12 col-lg-12 col-xs-12 img-content";
-				?>
-					<div class="<?= $class; ?>">
-						<img src="<?= wp_get_attachment_image_src( $img, 'full' )[0]; ?>" />	
-					</div>
-				<?php endforeach; ?>
-			</div>
-		</div>
-
-	<?php
-			break;
-
-		case 'tpl3':
-	?>
-		<div class="tpl tpl3">
-			<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" />
-		</div>
-
-	<?php
-			break;
-
-		case 'tpl4':
-			break;
-
-		case 'tpl5':
-			break;
-	} ?>
-
-<?php endforeach; ?>
 
 <?php 
 	$args = [
@@ -97,7 +57,6 @@ $tpls = StoudtTemplates::get_templates(get_the_ID());
 	<div class="wrapper">
 		<ul class="row">
 			<?php if ($projects->have_posts()): ?>
-			<?php $i = 0; while ($i < 4): $i++; ?>
 			<?php while ($projects->have_posts()): $projects->the_post(); ?>
 			<li class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
 				<a href="<?= get_permalink(); ?>">
@@ -118,7 +77,6 @@ $tpls = StoudtTemplates::get_templates(get_the_ID());
 					</div>
 				</a>
 			</li>
-			<?php endwhile; ?>
 			<?php endwhile; ?>
 			<?php endif; ?>
 		</ul>

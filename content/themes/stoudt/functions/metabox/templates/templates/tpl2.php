@@ -4,10 +4,12 @@
 
 	$descr = "";
 	$img_ids = [];
+	$list_images = false;
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
 		$img_ids = $tpl->img;
+		$list_images = isset($tpl->list) ? true : false;
 	}
 ?>
 
@@ -16,9 +18,16 @@
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl2" />
 
 	<header>
-		<h1>Template 2</h1>
+		<h1>Multiple images</h1>
 		<button class="tpl-delete">Eliminar template</button>
 	</header>
+
+	<div>
+		<label>
+			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][list]" <?= $list_images ? "checked" : ""; ?> />
+			List images
+		</label>
+	</div>
 
 	<div>
 		<textarea name="tpl[<?= $k; ?>][descr]" class="tpl-descr"><?= $descr; ?></textarea>

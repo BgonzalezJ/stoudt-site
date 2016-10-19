@@ -12,11 +12,12 @@ jQuery(function ($){
 			console.log(attachment);
 			$('.portfolio-attachment-id').val(attachment.id);
 			$('.name').html(attachment.filename);
-			$('.size').html(attachment.filesize);
-			$('.date').html(attachment.dateFormated);
-			// $("#img_id_"+caracteristica_id).val(attachment.id);
-			// $("#img_"+caracteristica_id).attr("src",attachment.url);
+			$('.link').attr("href",attachment.url);
 		}
 		wp.media.editor.open( button );
 	} );
+
+	$(".delete-portfolio").click(function (e){
+		$('.portfolio-attachment-id').val(0);
+	});
 });

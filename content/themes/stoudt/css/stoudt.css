@@ -329,6 +329,17 @@ a {
 	max-width: 767px;
 }
 
+.single .link-to-another-site {
+	padding: 15px;
+	border-radius: 5px;
+	border: 2px solid #999;
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	min-width: 200px;
+	display: inline-block;
+}
+
 /* More Projects */
 
 #more-projects header {

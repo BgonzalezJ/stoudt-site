@@ -27,7 +27,7 @@
 		<?php 
 			$args = [
 				"post_type" => "post",
-				"posts_per_page" => 20,
+				"posts_per_page" => -1,
 				"post_status" => "publish",
 				"orderby" => "post_date"
 			];
@@ -36,7 +36,6 @@
 		?>
 		<ul class="row">
 			<?php if ($projects->have_posts()): ?>
-			<?php $i = 0; while ($i < 10): $i++; ?>
 			<?php while ($projects->have_posts()): $projects->the_post(); ?>
 				<li class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 					<a href="<?= get_permalink(); ?>">
@@ -58,7 +57,6 @@
 						</div>
 					</a>
 				</li>
-			<?php endwhile; ?>
 			<?php endwhile; ?>
 			<?php endif; ?>
 		</ul>

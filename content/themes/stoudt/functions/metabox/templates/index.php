@@ -63,6 +63,7 @@
 				if ( ! current_user_can( 'edit_post', $post_id ) )
 					return $post_id;
 			}
+
 			$tpls = json_encode($_POST["tpl"]);
 			update_post_meta($post_id, "_tpls", $tpls);
 		}

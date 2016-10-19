@@ -47,7 +47,7 @@
 						</ul>
 
 						<p class="text-center download-portfolio">
-							<a href="#">Download my portfolio</a>
+							<a href="<?= wp_get_attachment_url(get_option("_portfolio_uploaded", 0)); ?>" target="_blank">Download my portfolio</a>
 						</p>
 
 						<p class="text-center developed-by">

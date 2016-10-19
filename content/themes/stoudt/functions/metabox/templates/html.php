@@ -6,9 +6,9 @@
 <div>
 	<select id="select-tpl">
 		<option selected disabled>Selecciona template</option>
-		<option value="tpl1.php">Template 1</option>
-		<option value="tpl2.php">Template 2</option>
-		<option value="tpl3.php">Template 3</option>
+		<option value="tpl1.php">Single image + text</option>
+		<option value="tpl2.php">Multiple images</option>
+		<option value="tpl3.php">Fullsize image</option>
 		<option value="tpl4.php">Template 4</option>
 		<option value="tpl5.php">Template 5</option>
 	</select>

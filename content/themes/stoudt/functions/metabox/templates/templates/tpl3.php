@@ -16,7 +16,7 @@
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl3" />
 
 	<header>
-		<h1>Template 3</h1>
+		<h1>Fullsize image</h1>
 		<button class="tpl-delete">Eliminar template</button>
 	</header>
 

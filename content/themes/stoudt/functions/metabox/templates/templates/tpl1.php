@@ -5,11 +5,13 @@
 	$descr = "";
 	$img_id = 0;
 	$img = "";
+	$above = false;
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
 		$img_id = $tpl->img;
 		$img = wp_get_attachment_image_src( $img_id, 'full' )[0];
+		$above = isset($tpl->above) ? true : false;
 	}
 
 	
@@ -20,9 +22,17 @@
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl1" />
 
 	<header>
-		<h1>Template 1</h1>
+		<h1>Single image + text</h1>
 		<button class="tpl-delete">Eliminar template</button>
 	</header>
+
+	<div>
+		<label>
+			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][above]" <?= $above ? "checked" : ""; ?> />
+			Text above image
+		</label>
+	</div>
+
 
 	<div>
 		<textarea name="tpl[<?= $k; ?>][descr]" class="tpl-descr">
