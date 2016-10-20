@@ -6,9 +6,8 @@
  */
 
 get_header();
-
 $tpls = StoudtTemplates::get_templates(get_the_ID());
-
+$image_cover = get_field("_img_on_the_cover");
 ?>
 
 <style>
@@ -21,6 +20,12 @@ $tpls = StoudtTemplates::get_templates(get_the_ID());
     	margin: auto;
 	}
 
+	<?php if (is_array($image_cover)): ?>
+		.single .cover img {
+			max-width: <?= $image_cover["width"];?>px;
+		}
+	<?php endif; ?>
+
 	@media (max-width: 767px) {
 		.single .cover .bg {
 			background-position: center 50px;
@@ -29,11 +34,11 @@ $tpls = StoudtTemplates::get_templates(get_the_ID());
 </style>
 
 <header class="cover">
-
 	<div class="bg"></div>
+	<?php if (is_array($image_cover)): ?>
+		<img src="<?= $image_cover["url"]; ?>" />
+	<?php endif; ?>
 
-
-	<!-- <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" /> -->
 </header>
 
 <?php

@@ -29,7 +29,8 @@
 				"post_type" => "post",
 				"posts_per_page" => -1,
 				"post_status" => "publish",
-				"orderby" => "post_date"
+				"orderby" => "menu_order",
+				"order" => "asc"
 			];
 
 			$projects = new WP_Query($args);
