@@ -16,7 +16,8 @@
       "wpackagist-plugin/multiple-post-thumbnails" :"1.6.6",
       "wpackagist-plugin/wp-subtitle" :"*",
       "wpackagist-plugin/advanced-custom-fields":"*",
-      "wpackagist-plugin/metronet-reorder-posts":"*"
+      "wpackagist-plugin/metronet-reorder-posts":"*",
+      "wpackagist-plugin/wordpress-importer":"*"
     },
     "repositories":[
         {

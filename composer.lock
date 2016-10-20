@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b57d1a865902a66a3ba15fbe0b01e578",
-    "content-hash": "ab0a80ebab9606e952580959fc65763c",
+    "hash": "a0e967b58be5aecfce8c06994261bc87",
+    "content-hash": "06c68369adfc60d246fa8718edb24faf",
     "packages": [
         {
             "name": "composer/installers",
@@ -317,6 +317,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/multiple-post-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-importer",
+            "version": "0.6.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
+                "reference": "tags/0.6.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-importer/"
         },
         {
             "name": "wpackagist-plugin/wp-smtp",

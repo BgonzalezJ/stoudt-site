@@ -21,6 +21,7 @@
 		}
 
 		public static function add_scripts() {
+			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_media();
 			wp_register_script( 'tpls', get_template_directory_uri() . '/functions/metabox/templates/js/tpls.js', array( 'jquery' ) );
 

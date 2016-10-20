@@ -18,12 +18,12 @@
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl4" />
 
 	<header>
-		<h1>Template 4</h1>
+		<h1>Image + BG color or pattern</h1>
 		<button class="tpl-delete">Eliminar template</button>
 	</header>
 
 	<div>
-		<textarea name="tpl[<?= $k; ?>][descr]" class="tpl-descr"><?= $descr; ?></textarea>
+		
 	</div>
 
 	<div>
