@@ -78,30 +78,25 @@ a {
     border-color: transparent;
     border: 0px;
     margin-bottom: 0px;
-    max-height: 100px;
-    height: 100px;
+    max-height: 70px;
+    height: 70px;
     overflow: hidden;
     position: fixed;
     z-index: 999;
     width: 100%;
     top: 0px;
     transition: top .5s, max-height .5s;
-    background: transparent;
+    background: #fff;
+    transition: box-shadow .3s;
 }
 
 #main-menu.fixed {
-	top: -50px;
-	max-height: 50px;
-	background: #fff;
-}
-
-#main-menu.fixed.show {
 	top: 0px;
-	box-shadow: 0px 5px 30px #e9e9e9;
+	box-shadow: 0px 0px 4px #000;
 }
 
 #main-menu a {
-	color: #000;
+	color: #999;
 }
 
 #main-menu .navbar-collapse {
@@ -129,16 +124,8 @@ a {
 }
 
 #main-menu .brand-name {
-	padding: 28px 0px;
-    font-size: 28px;
-    transition: font-size .2s;
-    text-transform: uppercase;
-}
-
-#main-menu.fixed .brand-name {
-	padding: 5px 0px;
+	padding: 15px 0px;
 	font-size: 28px;
-	transition: padding .3s;
 }
 
 #main-menu .brand-name-mobile {
@@ -148,12 +135,7 @@ a {
 }
 
 #main-menu .menu {
-	padding: 22px 0px;
-	transition: padding .3s;
-}
-
-#main-menu.fixed .menu {
-	padding: 0px;	
+	padding: 7.5px 0px;	
 }
 
 #main-menu .rrss {
@@ -163,7 +145,7 @@ a {
 #main-menu .rrss li {
 	display: inline-block;
     margin: 0px 5px;
-    border: 2px solid #000;
+    border: 2px solid #999;
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -173,7 +155,7 @@ a {
 }
 
 #main-menu .rrss li a {
-	color: #000;
+	color: #999;
 	font-size: 18px;
 	transition: color .3s;
 }
@@ -185,6 +167,10 @@ a {
 	color: #000;
 }
 
+#content {
+	margin-top: 70px;
+}
+
 @media (max-width: 767px) {
 	#main-menu {
 		overflow: auto;
@@ -192,7 +178,7 @@ a {
 		height: auto!important;
 		top: 0px!important;
 		background: #fff;
-		box-shadow: 0px 5px 30px #e9e9e9;
+		box-shadow: 0px 0px 4px #000;
 	}
 
 	#main-menu .brand-name,
@@ -239,7 +225,7 @@ a {
 .home-cover div.cover {
 	background: url(../img/home-cover.png);
 	background-attachment: fixed;
-    background-position: center 75px;
+    background-position: center 115px;
     background-repeat: no-repeat;
     background-size: auto;
     width: 100%;
@@ -256,6 +242,7 @@ a {
 @media (max-width: 767px) {
 	.home-cover div.cover {
 		background-size: 85%;
+		background-position: center 75px;
 	}
 }
 
@@ -291,6 +278,10 @@ a {
 	padding: 0px 15px;
 }
 
+.projects .intro {
+	margin: 0px -15px;
+}
+
 .projects .list-projects {
 	margin-top: 100px;
 	width: 100%;
@@ -314,7 +305,6 @@ a {
 }
 
 @media (max-width: 767px) {
-
 	.home-cover {
 		margin-bottom: 30px;
 	}
@@ -328,6 +318,22 @@ a {
 
 .single .container {
 	max-width: 767px;
+}
+
+.single .cover {
+	max-height: 500px;
+	overflow: hidden;
+}
+
+.single .cover .bg {
+	width: 100%;
+	position: relative;
+}
+
+.single .cover .bg:before {
+	display: block;
+	content: '';
+	padding-top: 39.0625%;
 }
 
 .single .link-to-another-site {
@@ -451,6 +457,11 @@ a {
 #site-footer .download-portfolio a {
 	color: #999;
 	font-size: 18px;
+	transition: color .3s;
+}
+
+#site-footer .download-portfolio a:hover {
+	color: #3e3e3e;
 }
 
 @media (max-width: 767px) {

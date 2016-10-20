@@ -9,10 +9,31 @@ get_header();
 
 $tpls = StoudtTemplates::get_templates(get_the_ID());
 
-?> 
+?>
+
+<style>
+	.single .cover .bg {
+		background: url(<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);
+		background-attachment: fixed;
+    	background-position: center 70px;
+    	background-repeat: no-repeat;
+    	background-size: 100%;
+    	margin: auto;
+	}
+
+	@media (max-width: 767px) {
+		.single .cover .bg {
+			background-position: center 50px;
+		}
+	}
+</style>
 
 <header class="cover">
-	<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" />
+
+	<div class="bg"></div>
+
+
+	<!-- <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" /> -->
 </header>
 
 <?php
