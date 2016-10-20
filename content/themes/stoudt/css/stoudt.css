@@ -287,8 +287,13 @@ a {
 	display: block;
 }
 
+.projects {
+	padding: 0px 15px;
+}
+
 .projects .list-projects {
 	margin-top: 100px;
+	width: 100%;
 }
 
 .projects .list-projects ul {
@@ -316,10 +321,6 @@ a {
 
 	.projects .list-projects {
 		margin-top: 30px;
-	}
-
-	.projects .list-projects ul {
-		padding: 0px 5px;
 	}
 }
 
