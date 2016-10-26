@@ -1,9 +1,11 @@
 jQuery(function ($) {
 
+	$('.color-picker').wpColorPicker();
+
 	if (typeof tinymce != "undefined")
 		tinymce.init({selector: "textarea"});
 
-	var image_frame;
+	var image_frame, pattern_frame;
 
 	$("#add-tpl").click(function (e) {
 		e.preventDefault();
@@ -18,6 +20,7 @@ jQuery(function ($) {
 				$("#views-tpls").append(r);
 				$("#" + id).find("img").attr("src", wp_imgs.img_example);
 				tinymce.init({selector: "textarea"});
+				$('.color-picker').wpColorPicker();
 			}
 		});
 	});
@@ -26,6 +29,12 @@ jQuery(function ($) {
 		e.preventDefault();
 		var parent = $(this).parent().parent();
 		subir_imagen(parent);
+	});
+
+	$("body").on("click", ".tpl-pattern", function (e){
+		e.preventDefault();
+		var parent = $(this).parent().parent();
+		subir_pattern(parent);
 	});
 
 	$("body").on("click", ".tpl-delete", function (e){
@@ -50,6 +59,38 @@ jQuery(function ($) {
 		var parent = $(this).parent().parent();
 		subir_imagen(parent);
 	});
+
+	function subir_pattern(element) {
+
+		// If the frame already exists, re-open it.
+		if ( pattern_frame ) {
+			pattern_frame.open();
+			pattern_frame.id = element;
+			return;
+		}
+		// Sets up the media library frame
+		pattern_frame = wp.media.frames.meta_image_frame = wp.media({
+			title: wp_imgs.title,
+			button: { text:  wp_imgs.button },
+			library: { type: 'image' },
+			id: element
+		});
+ 
+		// Runs when an image is selected.
+		pattern_frame.on('select', function(){
+
+			// Grabs the attachment selection and creates a JSON representation of the model.
+			var media_attachment = pattern_frame.state().get('selection').first().toJSON();
+			// Sends the attachment URL to our custom image input field.
+			// Vemos la cantidad de imgs existentes
+			$(pattern_frame.id).find(".pattern-img").attr('src', media_attachment.url);
+			$(pattern_frame.id).find(".pattern-id").val(media_attachment.id);
+
+		});
+ 
+		// Opens the media library frame.
+		pattern_frame.open();
+	}
 
 
 

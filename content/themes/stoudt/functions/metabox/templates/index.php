@@ -23,7 +23,7 @@
 		public static function add_scripts() {
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_media();
-			wp_register_script( 'tpls', get_template_directory_uri() . '/functions/metabox/templates/js/tpls.js', array( 'jquery' ) );
+			wp_register_script( 'tpls', get_template_directory_uri() . '/functions/metabox/templates/js/tpls.js', array( 'jquery', 'wp-color-picker' ) );
 
 			wp_localize_script('tpls', 'wp_dir', [
 				'dir' => get_template_directory_uri() . '/functions/metabox/templates/templates/'

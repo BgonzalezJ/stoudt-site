@@ -8,11 +8,16 @@
 get_header();
 $tpls = StoudtTemplates::get_templates(get_the_ID());
 $image_cover = get_field("_img_on_the_cover");
+$bg_color = get_field("_bg_color_cover");
 ?>
 
 <style>
 	.single .cover .bg {
-		background: url(<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);
+		<?php if (get_post_thumbnail_id() != 0): ?>
+			background: url(<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);
+		<?php else: ?>
+			background: <?= $bg_color; ?>;
+		<?php endif; ?>
 		background-attachment: fixed;
     	background-position: center 70px;
     	background-repeat: no-repeat;
@@ -48,7 +53,7 @@ $image_cover = get_field("_img_on_the_cover");
 				case 'tpl1': require 'project_templates/tpl1.php'; break;
 				case 'tpl2': require 'project_templates/tpl2.php'; break;
 				case 'tpl3': require 'project_templates/tpl3.php'; break;
-				case 'tpl4': break;
+				case 'tpl4': require 'project_templates/tpl4.php'; break;
 				case 'tpl5': break;
 			}
 		endforeach;

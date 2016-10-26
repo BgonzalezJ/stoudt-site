@@ -2,7 +2,7 @@
 	$above = isset($tpl->above) ? true : false;
 ?>
 
-<div class="container tpl tpl1">
+<div class="container tpl tpl1 <?= !$above ? "side" : ""; ?>">
 	<div class="row">
 
 		<?php if (!$above): ?>
