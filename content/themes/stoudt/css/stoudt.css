@@ -363,6 +363,15 @@ a {
 	margin-top: 50px;
 }
 
+.single iframe,
+.single .embed-fb-video * {
+	width: 100%!important;
+	height: auto;
+	max-width: 500px;
+	margin: auto;
+	display: block;
+}
+
 /* More Projects */
 
 #more-projects header {

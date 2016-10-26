@@ -10,7 +10,7 @@
 		<option value="tpl2.php">Multiple images</option>
 		<option value="tpl3.php">Fullsize image</option>
 		<option value="tpl4.php">Image + BG color or pattern</option>
-		<option value="tpl5.php">Template 5</option>
+		<option value="tpl5.php">Video</option>
 	</select>
 	<button id="add-tpl">Añadir</button>
 </div>

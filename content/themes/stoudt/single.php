@@ -54,7 +54,7 @@ $bg_color = get_field("_bg_color_cover");
 				case 'tpl2': require 'project_templates/tpl2.php'; break;
 				case 'tpl3': require 'project_templates/tpl3.php'; break;
 				case 'tpl4': require 'project_templates/tpl4.php'; break;
-				case 'tpl5': break;
+				case 'tpl5': require 'project_templates/tpl5.php'; break;
 			}
 		endforeach;
 	?>
@@ -114,6 +114,15 @@ $bg_color = get_field("_bg_color_cover");
 		</div>
 	</div>
 </div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1629750073908784";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="<?= get_template_directory_uri() ?>/js/jquery.touchSwipe.min.js"></script>
 <script src="<?= get_template_directory_uri() ?>/js/projects.js"></script>

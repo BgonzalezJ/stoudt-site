@@ -1,5 +1,12 @@
 jQuery(function ($){
 
+	var set_height_iframe = function () {
+		var height = Math.ceil($(".single iframe").width() * 0.75)
+		$(".single iframe").height(height);
+	}
+
+	set_height_iframe();
+
 	var centerImageCover = function () {
 		var imgcenter = $(".single .cover img");
 		if (imgcenter.length > 0) {
@@ -36,6 +43,7 @@ jQuery(function ($){
 	$(window).resize(function () {
 		swipe_more_projects();
 		centerImageCover();
+		set_height_iframe();
 	});
 
 	var pager = 0;
