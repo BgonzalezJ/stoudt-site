@@ -338,13 +338,17 @@ a {
 }
 
 .single .cover img {
-	position: absolute;
-    top: 0px;
+	position: fixed;
+    top: 70px;
     right: 0px;
     left: 0px;
-    bottom: 0px;
     margin: auto;
     width: 90%;
+}
+
+.single .template-project-container {
+	background: #fff;
+	position: relative;
 }
 
 .single .link-to-another-site {
@@ -419,6 +423,7 @@ a {
 	background: #fff;
 	border: 0px;
 	padding: 100px 0px 10px;
+	position: relative;
 }
 
 #site-footer .rrss {

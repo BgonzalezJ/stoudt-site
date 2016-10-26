@@ -1,4 +1,20 @@
-jQuery(document).ready(function ($){
+jQuery(function ($){
+
+	var centerImageCover = function () {
+		var imgcenter = $(".single .cover img");
+		if (imgcenter.length > 0) {
+			var top = 50;
+			if ($(window).width() > 767)
+				top = 70;
+			var cover = $(".single .cover");
+			var center = ((cover.height() - imgcenter.height()) / 2) + top;
+			imgcenter.css("top", center);
+		}
+	}
+
+	$(".single .cover img").ready(function (){
+		centerImageCover();
+	});
 
 	var wrapper = $("#more-projects .wrapper");
 	var projects = $("#more-projects .wrapper").find("ul").find("li");
@@ -19,6 +35,7 @@ jQuery(document).ready(function ($){
 
 	$(window).resize(function () {
 		swipe_more_projects();
+		centerImageCover();
 	});
 
 	var pager = 0;
