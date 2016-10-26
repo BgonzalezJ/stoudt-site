@@ -367,7 +367,7 @@ a {
 .single .embed-fb-video * {
 	width: 100%!important;
 	height: auto;
-	max-width: 500px;
+	max-width: 600px;
 	margin: auto;
 	display: block;
 }
