@@ -43,6 +43,10 @@
 	display: inline-block;
 }
 
+.tpl .pattern-img {
+	width: 50px;
+}
+
 .tpl-img-box .remove-img {
 	position: absolute;
 	top: 0px;

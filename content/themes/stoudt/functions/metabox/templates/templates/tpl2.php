@@ -4,12 +4,12 @@
 
 	$descr = "";
 	$img_ids = [];
-	$list_images = false;
+	$list_images = 1;
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
 		$img_ids = $tpl->img;
-		$list_images = isset($tpl->list) ? true : false;
+		$list_images = $tpl->list;
 	}
 ?>
 
@@ -24,8 +24,18 @@
 
 	<div>
 		<label>
-			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][list]" <?= $list_images ? "checked" : ""; ?> />
-			List images
+			<input type="radio" value="1" name="tpl[<?= $k; ?>][list]" <?= $list_images == 1 ? "checked" : ""; ?> class="tplcheck" />
+			2 small 1 large
+		</label>
+
+		<label>
+			<input type="radio" value="2" name="tpl[<?= $k; ?>][list]" <?= $list_images == 2 ? "checked" : ""; ?> class="tplcheck" />
+			List
+		</label>
+
+		<label>
+			<input type="radio" value="3" name="tpl[<?= $k; ?>][list]" <?= $list_images == 3 ? "checked" : ""; ?> class="tplcheck" />
+			3 per row
 		</label>
 	</div>
 

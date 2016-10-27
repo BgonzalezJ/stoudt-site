@@ -68,6 +68,11 @@ a {
 	margin-bottom: 40px;
 }
 
+.tpl2 .img-content.without-padding {
+	padding: 0px;
+	margin: 0px;
+}
+
 /* Menú */
 
 #main-menu {

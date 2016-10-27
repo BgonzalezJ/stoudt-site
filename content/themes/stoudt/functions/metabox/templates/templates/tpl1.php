@@ -28,7 +28,7 @@
 
 	<div>
 		<label>
-			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][above]" <?= $above ? "checked" : ""; ?> />
+			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][above]" <?= $above ? "checked" : ""; ?> class="tplabove" />
 			Text above image
 		</label>
 	</div>
