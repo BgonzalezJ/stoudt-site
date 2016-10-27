@@ -23,7 +23,7 @@
 
 	<header>
 		<h1>Single image + text</h1>
-		<button class="tpl-delete">Eliminar template</button>
+		<button class="button button-primary tpl-delete">Eliminar template</button>
 	</header>
 
 	<div>

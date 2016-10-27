@@ -12,14 +12,15 @@
 		<option value="tpl4.php">Image + BG color or pattern</option>
 		<option value="tpl5.php">Video</option>
 	</select>
-	<button id="add-tpl">Añadir</button>
+	<button id="add-tpl" class="button button-primary">Añadir</button>
 </div>
 
 <div id="views-tpls">
 	
 	<?php foreach ($tpls as $k => $tpl): $tpl = (object) $tpl; ?>
 		<?php
-			require get_template_directory() . '/functions/metabox/templates/templates/' . $tpl->tpl . '.php';
+			if (isset($tpl->tpl))
+				require get_template_directory() . '/functions/metabox/templates/templates/' . $tpl->tpl . '.php';
 		?>
 	<?php endforeach; ?>
 </div>

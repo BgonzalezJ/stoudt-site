@@ -15,10 +15,11 @@
 
 	<header>
 		<h1>Video</h1>
-		<button class="tpl-delete">Eliminar template</button>
+		<button class="button button-primary tpl-delete">Eliminar template</button>
 	</header>
 
 	<div>
-		<input type="text" name="tpl[<?= $k; ?>][video]" value="<?= $video; ?>" placeholder="Insertar link de video (Facebook, Youtube, Vimeo)" />
+		<p>Inserta link de video (Facebook, Youtube, Vimeo)</p>
+		<input type="text" name="tpl[<?= $k; ?>][video]" class="link-video" value="<?= $video; ?>" placeholder="Insertar link de video (Facebook, Youtube, Vimeo)" />
 	</div>
 </div>

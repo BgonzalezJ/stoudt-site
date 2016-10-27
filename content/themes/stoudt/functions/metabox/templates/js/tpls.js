@@ -41,16 +41,19 @@ jQuery(function ($) {
 		e.preventDefault();
 		var parent = $(this).parent().parent();
 		$(parent).remove();
-		var l = 0;
-		$.each($(".tpl"), function () {
-			$(this).attr("data-i", l);
-			$(this).find(".tpl-type").attr("name","tpl["+l+"][tpl]");
-			$(this).find(".tpl-descr").attr("name","tpl["+l+"][descr]");
+
+		$.each($(".tpl"), function (i, v) {
+			$(this).attr("data-i", i);
+			$(this).find(".tpl-type").attr("name","tpl["+i+"][tpl]");
+			$(this).find(".tpl-descr").attr("name","tpl["+i+"][descr]");
 			if ($(this).hasClass("tpl2"))
-				$(this).find(".attachment-id").attr("name","tpl["+l+"][img][]");
-			else
-				$(this).find(".attachment-id").attr("name","tpl["+l+"][img]");
-			l++;
+				$(this).find(".attachment-id").attr("name","tpl["+i+"][img][]");
+			else {
+				$(this).find(".attachment-id").attr("name","tpl["+i+"][img]");
+				$(this).find(".link-video").attr("name","tpl["+i+"][video]");
+				$(this).find(".pattern-id").attr("name","tpl["+i+"][pattern]");
+				$(this).find(".color-picker").attr("name","tpl["+i+"][bgcolor]");
+			}
 		});
 	});
 

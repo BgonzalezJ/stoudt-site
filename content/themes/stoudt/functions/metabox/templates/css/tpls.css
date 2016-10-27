@@ -3,9 +3,29 @@
 	padding: 20px 0px;
 }
 
+.tpl header {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.tpl header h1 {
+	float: left;
+}
+
+.tpl header .tpl-delete {
+	float: right;
+	margin-top: 10px;
+}
+
 .tpl textarea {
 	display: block;
 	margin: 15px 0px;
+}
+
+.tpl input[type="text"] {
+	width: 100%;
+	padding: 5px 15px;
+	border-radius: 5px;
 }
 
 .tpl-add-image {
@@ -18,7 +38,7 @@
 }
 
 .tpl-img-box {
-	max-width: 300px;
+	max-width: 100px;
 	position: relative;
 	display: inline-block;
 }

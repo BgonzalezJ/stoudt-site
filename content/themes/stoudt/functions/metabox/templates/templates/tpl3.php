@@ -17,7 +17,7 @@
 
 	<header>
 		<h1>Fullsize image</h1>
-		<button class="tpl-delete">Eliminar template</button>
+		<button class="button button-primary tpl-delete">Eliminar template</button>
 	</header>
 
 	<div>
