@@ -19,8 +19,10 @@ jQuery(function ($){
 		}
 	}
 
-	$(".single .cover img").ready(function (){
+	$(".single .cover img").load(function (){
 		centerImageCover();
+	}).each(function(){
+		if (this.complete) $(this).load();
 	});
 
 	var wrapper = $("#more-projects .wrapper");
