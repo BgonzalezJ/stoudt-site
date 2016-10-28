@@ -1,5 +1,26 @@
 jQuery(function ($){
 
+	$.each($(".tpl1.side"), function () {
+ 		var _this = this;
+ 		$(_this).find("img").load(function (){
+ 			var b = function () {
+ 				var height = $(_this).find(".img-content").height();
+ 				$(_this).find(".descr-content").height(height);
+ 			}
+ 			if ($(window).width() > 767)
+ 				b();
+
+ 			$(window).resize(function () {
+ 				if ($(window).width() > 767)
+ 					b();
+ 				else
+ 					$(_this).find(".descr-content").removeAttr("style");
+ 			});
+ 		}).each(function(){
+ 			if (this.complete) $(this).load();
+ 		})
+ 	});
+
 	var set_height_iframe = function () {
 		var height = Math.ceil($(".single iframe").width() * 0.75)
 		$(".single iframe").height(height);

@@ -40,31 +40,8 @@
 
  	showProjects();
 
-
  	$(window).scroll(function (e){
  		showMenu();
  		showProjects();
- 	});
-
-
-
-
- 	$.each($(".tpl1"), function () {
- 		var _this = this;
- 		$(_this).find("img").ready(function (){
- 			var b = function () {
- 				var height = $(_this).find(".img-content").height();
- 				$(_this).find(".descr-content").height(height);
- 			}
- 			if ($(window).width() > 767)
- 				b();
-
- 			$(window).resize(function () {
- 				if ($(window).width() > 767)
- 					b();
- 				else
- 					$(_this).find(".descr-content").removeAttr("style");
- 			});
- 		})
  	});
  });
