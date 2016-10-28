@@ -55,6 +55,7 @@ jQuery(function ($) {
 			$(this).find(".color-picker").attr("name","tpl["+i+"][bgcolor]");
 			$(this).find(".tplcheck").attr("name","tpl["+i+"][list]");
 			$(this).find(".tplabove").attr("name","tpl["+i+"][above]");
+			$(this).find(".w-padding").attr("name","tpl["+i+"][wpadding]");
 		});
 	});
 

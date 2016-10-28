@@ -9,7 +9,7 @@
 ?>
 
 <div class="tpl tpl4" style="background: <?= $background; ?>;">
-	<div class="container">
-		<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" />
+	<div class="container text-center">
+		<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" style="max-width: <?= wp_get_attachment_image_src( $tpl->img, 'full' )[1]; ?>px;" />
 	</div>
 </div>

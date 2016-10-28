@@ -5,11 +5,13 @@
 	$descr = "";
 	$img_ids = [];
 	$list_images = 1;
+	$wpadding = false;
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
 		$img_ids = $tpl->img;
 		$list_images = $tpl->list;
+		$wpadding = isset($tpl->wpadding) ? true : false;
 	}
 ?>
 
@@ -36,6 +38,13 @@
 		<label>
 			<input type="radio" value="3" name="tpl[<?= $k; ?>][list]" <?= $list_images == 3 ? "checked" : ""; ?> class="tplcheck" />
 			3 per row
+		</label>
+	</div>
+
+	<div>
+		<label>
+			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][wpadding]" <?= $wpadding ? "checked" : ""; ?> class="w-padding" />
+			Without padding
 		</label>
 	</div>
 
