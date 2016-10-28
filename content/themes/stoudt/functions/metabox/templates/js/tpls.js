@@ -124,9 +124,9 @@ jQuery(function ($) {
 			// Sends the attachment URL to our custom image input field.
 
 			// Vemos la cantidad de imgs existentes
-			var l = $(image_frame.id).find("img").length - 1;
-			$(image_frame.id).find("img:eq("+l+")").attr('src', media_attachment.url);
+			var l = $(image_frame.id).find(".attachment-img").length - 1;
 
+			$(image_frame.id).find(".attachment-img:eq("+l+")").attr('src', media_attachment.url);
 			$(image_frame.id).find(".attachment-id:eq("+l+")").val(media_attachment.id);
 
 			if ($(image_frame.id).hasClass("tpl2")) {
@@ -134,7 +134,7 @@ jQuery(function ($) {
 				$(image_frame.id).find(".images").append("<input type='hidden' name='tpl["+index+"][img][]' value='0' class='attachment-id' />");
 
 				var img = '<div class="tpl-img-box">';
-					img +=	'<img src="'+wp_imgs.img_example+'" />';
+					img +=	'<img src="'+wp_imgs.img_example+'" class="attachment-img" />';
 					img +=	'		<div class="remove-img">';
 					img +=	'			<a href="#">Eliminar imagen</a>';
 					img +=	'		</div>';

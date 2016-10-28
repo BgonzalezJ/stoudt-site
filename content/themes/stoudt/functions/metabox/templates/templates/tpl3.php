@@ -24,7 +24,7 @@
 		<a href="#" class="tpl-add-image">Añadir imagen</a>
 		<input type="hidden" name="tpl[<?= $k; ?>][img]" value="<?= $img_id; ?>" class="attachment-id" />
 		<div class="tpl-img-box">
-			<img src="<?= $img; ?>" />
+			<img src="<?= $img; ?>" class="attachment-img" />
 			<div class="remove-img">
 				<a href="#">Eliminar imagen</a>
 			</div>

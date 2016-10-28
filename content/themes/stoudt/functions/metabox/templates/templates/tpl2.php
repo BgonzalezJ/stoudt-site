@@ -72,7 +72,7 @@
 
 		<input type="hidden" name="tpl[<?= $k; ?>][img][]" value="0" class="attachment-id" />
 		<div class="tpl-img-box">
-			<img src="" />
+			<img src="" class="attachment-img" />
 			<div class="remove-img">
 				<a href="#">Eliminar imagen</a>
 			</div>
