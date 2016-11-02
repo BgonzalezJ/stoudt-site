@@ -54,8 +54,12 @@ jQuery(function ($) {
 			$(this).find(".pattern-id").attr("name","tpl["+i+"][pattern]");
 			$(this).find(".color-picker").attr("name","tpl["+i+"][bgcolor]");
 			$(this).find(".tplcheck").attr("name","tpl["+i+"][list]");
+			$(this).find(".w-padding").attr("name","tpl["+i+"][custom_list]");
 			$(this).find(".tplabove").attr("name","tpl["+i+"][above]");
 			$(this).find(".w-padding").attr("name","tpl["+i+"][wpadding]");
+			$(this).find(".fullsize").attr("name","tpl["+i+"][fullsize]");
+			$(this).find(".tpl-margin-top").attr("name","tpl["+i+"][margin][top]");
+			$(this).find(".tpl-margin-bottom").attr("name","tpl["+i+"][margin][bottom]");
 		});
 	});
 

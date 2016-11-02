@@ -6,12 +6,14 @@
 	$img_id = 0;
 	$img = "";
 	$above = false;
+	$margins = ["top" => 100, "bottom" => 100];
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
 		$img_id = $tpl->img;
 		$img = wp_get_attachment_image_src( $img_id, 'full' )[0];
 		$above = isset($tpl->above) ? true : false;
+		$margins = isset($tpl->margin) ? $tpl->margin : ["top" => 100, "bottom" => 100];
 	}
 
 	
@@ -25,6 +27,21 @@
 		<h1>Single image + text</h1>
 		<button class="button button-primary tpl-delete">Eliminar template</button>
 	</header>
+
+	<div class="margenes">
+		<div>
+			<label>
+				<span>Margin Top:</span>
+				<input type="number" value="<?= $margins["top"]; ?>" name="tpl[<?= $k; ?>][margin][top]" class="tpl-margin-top" /> px
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>Margin Bottom:</span>
+				<input type="number" value="<?= $margins["bottom"]; ?>" name="tpl[<?= $k; ?>][margin][bottom]" class="tpl-margin-bottom" /> px
+			</label>
+		</div>	
+	</div>
 
 	<div>
 		<label>

@@ -65,22 +65,13 @@
 					return $post_id;
 			}
 
-			$tpls = json_encode($_POST["tpl"]);
-			update_post_meta($post_id, "_tpls", $tpls);
+			update_post_meta($post_id, "_tpls", $_POST["tpl"]);
 		}
-
 
 		public function get_templates($post_id) {
 			$tpls = get_post_meta($post_id, "_tpls", true);
-
-			if (!empty($tpls))
-				$tpls = json_decode(stripslashes($tpls), true);
-			else
-				$tpls = [];
-
-			if (is_null($tpls))
-				$tpls = [];
-
+			if (!is_array($tpls))
+				return [];
 			return $tpls;
 		}
 

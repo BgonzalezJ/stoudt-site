@@ -8,6 +8,7 @@
 	$color = "";
 	$pattern_id = 0;
 	$pattern = "";
+	$margins = ["top" => 100, "bottom" => 100];
 
 	if (isset($tpl)) {
 		$img_id = $tpl->img;
@@ -15,6 +16,7 @@
 		$color = $tpl->bgcolor;
 		$pattern_id = $tpl->pattern;
 		$pattern = wp_get_attachment_image_src( $pattern_id, 'full' )[0];
+		$margins = isset($tpl->margin) ? $tpl->margin : ["top" => 100, "bottom" => 100];
 	}
 ?>
 
@@ -26,6 +28,21 @@
 		<h1>Image + BG color or pattern</h1>
 		<button class="button button-primary tpl-delete">Eliminar template</button>
 	</header>
+
+	<div class="margenes">
+		<div>
+			<label>
+				<span>Margin Top:</span>
+				<input type="number" value="<?= $margins["top"]; ?>" name="tpl[<?= $k; ?>][margin][top]" /> px
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>Margin Bottom:</span>
+				<input type="number" value="<?= $margins["bottom"]; ?>" name="tpl[<?= $k; ?>][margin][bottom]" /> px
+			</label>
+		</div>	
+	</div>
 
 	<div>
 		<input type="text" class="color-picker" value="<?= $color; ?>" name="tpl[<?= $k; ?>][bgcolor]" />

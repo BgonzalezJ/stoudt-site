@@ -3,9 +3,12 @@
 		$k = "%s";
 
 	$video = "";
+	$margins = ["top" => 100, "bottom" => 100];
+	
 
 	if (isset($tpl)) {
 		$video = $tpl->video;
+		$margins = isset($tpl->margin) ? $tpl->margin : ["top" => 100, "bottom" => 100];
 	}
 ?>
 
@@ -17,6 +20,21 @@
 		<h1>Video</h1>
 		<button class="button button-primary tpl-delete">Eliminar template</button>
 	</header>
+
+	<div class="margenes">
+		<div>
+			<label>
+				<span>Margin Top:</span>
+				<input type="number" value="<?= $margins["top"]; ?>" name="tpl[<?= $k; ?>][margin][top]" /> px
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>Margin Bottom:</span>
+				<input type="number" value="<?= $margins["bottom"]; ?>" name="tpl[<?= $k; ?>][margin][bottom]" /> px
+			</label>
+		</div>	
+	</div>
 
 	<div>
 		<p>Inserta link de video (Facebook, Youtube, Vimeo)</p>

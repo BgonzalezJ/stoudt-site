@@ -83,6 +83,15 @@ a {
 	padding-bottom: 50px;
 }
 
+.tpl.fullsize {
+	width: 100%;
+}
+
+.tpl.fullsize .row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 /* Menú */
 
 #main-menu {

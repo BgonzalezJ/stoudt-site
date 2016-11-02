@@ -6,12 +6,16 @@
 	$img_ids = [];
 	$list_images = 1;
 	$wpadding = false;
+	$margins = ["top" => 100, "bottom" => 100];
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
 		$img_ids = $tpl->img;
 		$list_images = $tpl->list;
 		$wpadding = isset($tpl->wpadding) ? true : false;
+		$fullsize = isset($tpl->fullsize) ? true : false;
+		$custom_list = isset($tpl->custom_list) ? $tpl->custom_list : 3;
+		$margins = isset($tpl->margin) ? $tpl->margin : ["top" => 100, "bottom" => 100];
 	}
 ?>
 
@@ -23,6 +27,21 @@
 		<h1>Multiple images</h1>
 		<button class="button button-primary tpl-delete">Eliminar template</button>
 	</header>
+
+	<div class="margenes">
+		<div>
+			<label>
+				<span>Margin Top:</span>
+				<input type="number" value="<?= $margins["top"]; ?>" name="tpl[<?= $k; ?>][margin][top]" /> px
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>Margin Bottom:</span>
+				<input type="number" value="<?= $margins["bottom"]; ?>" name="tpl[<?= $k; ?>][margin][bottom]" /> px
+			</label>
+		</div>	
+	</div>
 
 	<div>
 		<label>
@@ -39,12 +58,24 @@
 			<input type="radio" value="3" name="tpl[<?= $k; ?>][list]" <?= $list_images == 3 ? "checked" : ""; ?> class="tplcheck" />
 			3 per row
 		</label>
+
+		<label>
+			<input type="radio" value="4" name="tpl[<?= $k; ?>][list]" <?= $list_images == 4 ? "checked" : ""; ?> class="tplcheck" />
+			<input type="number" min="1" max="12" value="<?= $custom_list; ?>" name="tpl[<?= $k; ?>][custom_list]" /> per row
+		</label>
 	</div>
 
 	<div>
 		<label>
 			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][wpadding]" <?= $wpadding ? "checked" : ""; ?> class="w-padding" />
 			Without padding
+		</label>
+	</div>
+
+	<div>
+		<label>
+			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][fullsize]" <?= $fullsize ? "checked" : ""; ?> class="fullsizes" />
+			Fullsize
 		</label>
 	</div>
 
