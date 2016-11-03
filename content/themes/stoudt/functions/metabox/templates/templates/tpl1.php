@@ -22,10 +22,14 @@
 
 <div class="tpl tpl1" data-i="<?= $k; ?>" id="%id">
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl1" />
-	
+
 	<header>
 		<h1>Single image + text</h1>
-		<button class="button button-primary tpl-delete">Eliminar template</button>
+
+		<button class="show">
+			<div class="indicator"></div>
+		</button>
+
 	</header>
 
 	<div class="margenes">
@@ -64,5 +68,9 @@
 		<div class="tpl-img-box">
 			<img src="<?= $img; ?>" class="attachment-img" />
 		</div>
+	</div>
+
+	<div class="delete-tpl-container">
+		<button class="button button-danger tpl-delete">Eliminar template</button>
 	</div>
 </div>

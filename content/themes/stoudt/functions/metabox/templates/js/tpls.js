@@ -25,6 +25,14 @@ jQuery(function ($) {
 		});
 	});
 
+	$("body").on("click", ".tpl .show", function (e){
+		e.preventDefault();
+		if (!$(this).parent().parent().hasClass("closed"))
+			$(this).parent().parent().addClass("closed");
+		else
+			$(this).parent().parent().removeClass("closed");
+	});
+
 	$("body").on("click", ".tpl-add-image", function (e){
 		e.preventDefault();
 		var parent = $(this).parent().parent();

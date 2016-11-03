@@ -6,7 +6,7 @@
 
 ?>
 
-<div>
+<div id="select-tpl-container">
 	<select id="select-tpl">
 		<option selected disabled>Selecciona template</option>
 		<option value="tpl1.php">Single image + text</option>

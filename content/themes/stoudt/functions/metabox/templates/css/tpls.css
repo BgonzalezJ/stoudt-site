@@ -1,20 +1,54 @@
+#select-tpl-container {
+	margin-top: 20px;
+}
+
 .tpl {
-	border-bottom: 2px solid #e3e3e3;
-	padding: 20px 0px;
+	border: 2px solid #e3e3e3;
+	padding: 0px 15px 20px;
+	margin-top: 30px;
+	overflow: hidden;
+	border-radius: 10px;
 }
 
 .tpl header {
 	overflow: hidden;
 	margin-bottom: 20px;
+	min-height: 50px;
+	margin-left: -15px;
+	margin-right: -15px;
+	border-bottom: 2px solid #e3e3e3;
+	padding: 0px 15px;
+	background: #0085ba;
 }
 
 .tpl header h1 {
+	color: #fff;
 	float: left;
 }
 
-.tpl header .tpl-delete {
+.tpl header .show {
 	float: right;
 	margin-top: 10px;
+	width: 30px;
+	height: 30px;
+}
+
+.tpl header .show .indicator {
+	background: url(../img/minus.png);
+	width: 15px;
+	height: 15px;
+	background-size: 100%;
+}
+
+.tpl.closed {
+	height: 50px;
+}
+
+.tpl.closed header .show .indicator {
+	background: url(../img/plus.png);
+	width: 15px;
+	height: 15px;
+	background-size: 100%;
 }
 
 .tpl textarea {
@@ -34,6 +68,10 @@
 .tpl .color-container {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.tpl .radio-container p {
+	font-weight: bold;
 }
 
 .tpl .margenes span {
@@ -114,4 +152,22 @@
     top: 0px;
     bottom: 0px;
     margin: auto;
+}
+
+.delete-tpl-container {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.delete-tpl-container .button-danger {
+	background: #D30F15;
+	color: #fff;
+	border-color: #B20A0F;
+}
+
+.delete-tpl-container .button-danger:hover {
+	background: #780509;
+	color: #fff;
+	border-color: #4B0306;	
 }

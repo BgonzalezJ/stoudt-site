@@ -28,7 +28,10 @@
 
 	<header>
 		<h1>Image + BG color or pattern</h1>
-		<button class="button button-primary tpl-delete">Eliminar template</button>
+
+		<button class="show">
+			<div class="indicator"></div>
+		</button>
 	</header>
 
 	<div class="margenes">
@@ -68,5 +71,9 @@
 		<div class="tpl-img-box">
 			<img src="<?= $img; ?>" class="attachment-img" />
 		</div>
+	</div>
+
+	<div class="delete-tpl-container">
+		<button class="button button-danger tpl-delete">Eliminar template</button>
 	</div>
 </div>

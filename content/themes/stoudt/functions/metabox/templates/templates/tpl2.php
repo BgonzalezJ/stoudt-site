@@ -27,7 +27,10 @@
 
 	<header>
 		<h1>Multiple images</h1>
-		<button class="button button-primary tpl-delete">Eliminar template</button>
+
+		<button class="show">
+			<div class="indicator"></div>
+		</button>
 	</header>
 
 	<div class="margenes">
@@ -46,6 +49,9 @@
 	</div>
 
 	<div class="radio-container">
+
+		<p>How to show it</p>
+
 		<label>
 			<input type="radio" value="1" name="tpl[<?= $k; ?>][list]" <?= $list_images == 1 ? "checked" : ""; ?> class="tplcheck" />
 			2 small 1 large
@@ -107,5 +113,9 @@
 				<a href="#"><img src="<?= $remove_img; ?>" /></a>
 			</div>
 		</div>
+	</div>
+
+	<div class="delete-tpl-container">
+		<button class="button button-danger tpl-delete">Eliminar template</button>
 	</div>
 </div>
