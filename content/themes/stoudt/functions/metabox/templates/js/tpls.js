@@ -63,10 +63,19 @@ jQuery(function ($) {
 		});
 	});
 
-	$("body").on("click", ".remove-img a", function (e){
+	// Remueve imagen del template multiple images
+	$("body").on("click", ".tpl-img-box .remove-img a", function (e){
+		e.preventDefault();
+		$(this).parent().parent().remove();
+	});
+
+	// Remueve patron del template image + bg or pattern
+	$("body").on("click", ".tpl-pattern-box .remove-img a", function (e){
 		e.preventDefault();
 		var parent = $(this).parent().parent();
-		subir_imagen(parent);
+		parent.find(".pattern-id").val(0);
+		parent.find(".pattern-img").attr('src', wp_imgs.img_example);
+		parent.addClass("new");
 	});
 
 	function subir_pattern(element) {
@@ -92,6 +101,7 @@ jQuery(function ($) {
 			var media_attachment = pattern_frame.state().get('selection').first().toJSON();
 			// Sends the attachment URL to our custom image input field.
 			// Vemos la cantidad de imgs existentes
+			$(pattern_frame.id).find(".tpl-pattern-box").removeClass("new");
 			$(pattern_frame.id).find(".pattern-img").attr('src', media_attachment.url);
 			$(pattern_frame.id).find(".pattern-id").val(media_attachment.id);
 
@@ -132,15 +142,15 @@ jQuery(function ($) {
 
 			$(image_frame.id).find(".attachment-img:eq("+l+")").attr('src', media_attachment.url);
 			$(image_frame.id).find(".attachment-id:eq("+l+")").val(media_attachment.id);
+			$(image_frame.id).find(".tpl-img-box:eq("+l+")").removeClass("new");
 
 			if ($(image_frame.id).hasClass("tpl2")) {
 				var index = $(image_frame.id).data().i;
-				$(image_frame.id).find(".images").append("<input type='hidden' name='tpl["+index+"][img][]' value='0' class='attachment-id' />");
-
-				var img = '<div class="tpl-img-box">';
+				var img = '<div class="tpl-img-box new">';
+					img += "<input type='hidden' name='tpl["+index+"][img][]' value='0' class='attachment-id' />";
 					img +=	'<img src="'+wp_imgs.img_example+'" class="attachment-img" />';
 					img +=	'		<div class="remove-img">';
-					img +=	'			<a href="#">Eliminar imagen</a>';
+					img +=	'			<a href="#"><img src="'+wp_imgs.img_remove+'" /></a>';
 					img +=	'		</div>';
 					img +=	'	</div>';
 

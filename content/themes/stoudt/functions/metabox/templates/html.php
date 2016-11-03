@@ -1,6 +1,9 @@
 <?php
 	wp_nonce_field( 'tpls', 'tpls_nonce' );
 	$tpls = StoudtTemplates::get_templates(get_the_ID());
+	$remove_img = get_template_directory_uri() . "/functions/metabox/templates/img/remove.png";
+	$img_example = get_template_directory_uri() . "/img/img-example.png";
+
 ?>
 
 <div>

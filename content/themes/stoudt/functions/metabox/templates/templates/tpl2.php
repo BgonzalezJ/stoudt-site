@@ -7,6 +7,8 @@
 	$list_images = 1;
 	$wpadding = false;
 	$margins = ["top" => 100, "bottom" => 100];
+	$fullsize = false;
+	$custom_list = 3;
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
@@ -87,25 +89,22 @@
 		<a href="#" class="tpl-add-image">Añadir imagen</a>
 
 		<?php foreach ($img_ids as $img_id): ?>
-
 			<?php if ($img_id != 0 ): ?>
-
-			<input type="hidden" name="tpl[<?= $k; ?>][img][]" value="<?= $img_id; ?>" class="attachment-id" />
 			<div class="tpl-img-box">
-				<img src="<?= wp_get_attachment_image_src( $img_id, 'full' )[0];  ?>" />
+				<input type="hidden" name="tpl[<?= $k; ?>][img][]" value="<?= $img_id; ?>" class="attachment-id" />
+				<img src="<?= wp_get_attachment_image_src( $img_id, 'full' )[0];  ?>" class="attachment-img" />
 				<div class="remove-img">
-					<a href="#">Eliminar imagen</a>
+					<a href="#"><img src="<?= $remove_img; ?>" /></a>
 				</div>
 			</div>
 			<?php endif; ?>
 		<?php endforeach; ?>
 
-
-		<input type="hidden" name="tpl[<?= $k; ?>][img][]" value="0" class="attachment-id" />
-		<div class="tpl-img-box">
-			<img src="" class="attachment-img" />
+		<div class="tpl-img-box new">
+			<input type="hidden" name="tpl[<?= $k; ?>][img][]" value="0" class="attachment-id" />
+			<img src="<?= $img_example; ?>" class="attachment-img" />
 			<div class="remove-img">
-				<a href="#">Eliminar imagen</a>
+				<a href="#"><img src="<?= $remove_img; ?>" /></a>
 			</div>
 		</div>
 	</div>

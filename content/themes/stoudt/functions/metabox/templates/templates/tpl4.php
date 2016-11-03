@@ -7,7 +7,7 @@
 	$img = "";
 	$color = "";
 	$pattern_id = 0;
-	$pattern = "";
+	$pattern = $img_example;
 	$margins = ["top" => 100, "bottom" => 100];
 
 	if (isset($tpl)) {
@@ -16,6 +16,8 @@
 		$color = $tpl->bgcolor;
 		$pattern_id = $tpl->pattern;
 		$pattern = wp_get_attachment_image_src( $pattern_id, 'full' )[0];
+		if (empty($pattern))
+			$pattern = $img_example;
 		$margins = isset($tpl->margin) ? $tpl->margin : ["top" => 100, "bottom" => 100];
 	}
 ?>
@@ -48,9 +50,13 @@
 		<input type="text" class="color-picker" value="<?= $color; ?>" name="tpl[<?= $k; ?>][bgcolor]" />
 
 		<a href="#" class="tpl-pattern">Añadir patrón</a>
-		<input type="hidden" name="tpl[<?= $k; ?>][pattern]" value="<?= $pattern_id; ?>" class="pattern-id" />
-		<img src="<?= $pattern; ?>" class="pattern-img" />
-
+		<div class="tpl-pattern-box <?= $pattern_id == 0 ? "new" : ""; ?>">
+			<input type="hidden" name="tpl[<?= $k; ?>][pattern]" value="<?= $pattern_id; ?>" class="pattern-id" />
+			<img src="<?= $pattern; ?>" class="pattern-img" />
+			<div class="remove-img">
+				<a href="#"><img src="<?= $remove_img; ?>" /></a>
+			</div>
+		</div>
 	</div>
 
 	<div>
@@ -58,9 +64,6 @@
 		<input type="hidden" name="tpl[<?= $k; ?>][img]" value="<?= $img_id; ?>" class="attachment-id" />
 		<div class="tpl-img-box">
 			<img src="<?= $img; ?>" class="attachment-img" />
-			<div class="remove-img">
-				<a href="#">Eliminar imagen</a>
-			</div>
 		</div>
 	</div>
 </div>

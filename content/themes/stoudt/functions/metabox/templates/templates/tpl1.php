@@ -63,9 +63,6 @@
 		
 		<div class="tpl-img-box">
 			<img src="<?= $img; ?>" class="attachment-img" />
-			<div class="remove-img">
-				<a href="#">Eliminar imagen</a>
-			</div>
 		</div>
 	</div>
 </div>

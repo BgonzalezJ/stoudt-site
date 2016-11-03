@@ -33,7 +33,8 @@
 				array(
 					'title' => __( 'Selecciona o sube una Imagen', 'prfx-textdomain' ),
 					'button' => __( 'Usa esta imagen', 'prfx-textdomain' ),
-					'img_example' => get_template_directory_uri() . "/img/img-example.png"
+					'img_example' => get_template_directory_uri() . "/img/img-example.png",
+					'img_remove' => get_template_directory_uri() . "/functions/metabox/templates/img/remove.png"
 				)
 			);
 			wp_enqueue_script( 'tpls' );
