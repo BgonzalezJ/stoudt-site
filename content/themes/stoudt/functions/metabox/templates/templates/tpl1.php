@@ -22,7 +22,7 @@
 
 <div class="tpl tpl1" data-i="<?= $k; ?>" id="%id">
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl1" />
-
+	
 	<header>
 		<h1>Single image + text</h1>
 		<button class="button button-primary tpl-delete">Eliminar template</button>
@@ -43,7 +43,7 @@
 		</div>	
 	</div>
 
-	<div>
+	<div class="checkbox-container">
 		<label>
 			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][above]" <?= $above ? "checked" : ""; ?> class="tplabove" />
 			Text above image

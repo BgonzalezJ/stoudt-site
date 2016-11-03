@@ -28,9 +28,31 @@
 	border-radius: 5px;
 }
 
+.tpl .margenes,
+.tpl .checkbox-container,
+.tpl .radio-container,
+.tpl .color-container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.tpl .margenes span {
+	display: inline-block;
+	min-width: 100px;
+}
+
+.tpl .margenes input {
+	width: 100px;
+	border-radius: 5px;
+	padding: 5px 5px;
+	margin-right: 3px;
+}
+
+
 .tpl-add-image {
 	display: block;
-	margin-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .tpl img {
@@ -44,10 +66,16 @@
 	display: inline-block;
 }
 
+.tpl .color-container .pattern-container {
+	margin-top: 20px;
+}
+
 .tpl .tpl-pattern-box {
 	width: 50px;
 	position: relative;
 	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
 }
 
 .tpl-img-box .remove-img,

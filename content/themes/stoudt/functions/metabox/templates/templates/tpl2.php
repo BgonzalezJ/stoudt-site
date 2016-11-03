@@ -45,7 +45,7 @@
 		</div>	
 	</div>
 
-	<div>
+	<div class="radio-container">
 		<label>
 			<input type="radio" value="1" name="tpl[<?= $k; ?>][list]" <?= $list_images == 1 ? "checked" : ""; ?> class="tplcheck" />
 			2 small 1 large
@@ -67,14 +67,14 @@
 		</label>
 	</div>
 
-	<div>
+	<div class="checkbox-container">
 		<label>
 			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][wpadding]" <?= $wpadding ? "checked" : ""; ?> class="w-padding" />
 			Without padding
 		</label>
 	</div>
 
-	<div>
+	<div class="checkbox-container">
 		<label>
 			<input type="checkbox" value="1" name="tpl[<?= $k; ?>][fullsize]" <?= $fullsize ? "checked" : ""; ?> class="fullsizes" />
 			Fullsize
