@@ -1,5 +1,12 @@
 jQuery(function ($) {
 
+	$("#views-tpls").sortable({
+		update:  function (v) {
+			resetIndexTpls();
+		}
+	});
+	$("#views-tpls").disableSelection();
+
 	$('.color-picker').wpColorPicker();
 
 	if (typeof tinymce != "undefined")
@@ -49,7 +56,25 @@ jQuery(function ($) {
 		e.preventDefault();
 		var parent = $(this).parent().parent();
 		$(parent).remove();
+		resetIndexTpls();
+	});
 
+	// Remueve imagen del template multiple images
+	$("body").on("click", ".tpl-img-box .remove-img a", function (e){
+		e.preventDefault();
+		$(this).parent().parent().remove();
+	});
+
+	// Remueve patron del template image + bg or pattern
+	$("body").on("click", ".tpl-pattern-box .remove-img a", function (e){
+		e.preventDefault();
+		var parent = $(this).parent().parent();
+		parent.find(".pattern-id").val(0);
+		parent.find(".pattern-img").attr('src', wp_imgs.img_example);
+		parent.addClass("new");
+	});
+
+	function resetIndexTpls() {
 		$.each($(".tpl"), function (i, v) {
 			$(this).attr("data-i", i);
 			$(this).find(".tpl-type").attr("name","tpl["+i+"][tpl]");
@@ -69,22 +94,7 @@ jQuery(function ($) {
 			$(this).find(".tpl-margin-top").attr("name","tpl["+i+"][margin][top]");
 			$(this).find(".tpl-margin-bottom").attr("name","tpl["+i+"][margin][bottom]");
 		});
-	});
-
-	// Remueve imagen del template multiple images
-	$("body").on("click", ".tpl-img-box .remove-img a", function (e){
-		e.preventDefault();
-		$(this).parent().parent().remove();
-	});
-
-	// Remueve patron del template image + bg or pattern
-	$("body").on("click", ".tpl-pattern-box .remove-img a", function (e){
-		e.preventDefault();
-		var parent = $(this).parent().parent();
-		parent.find(".pattern-id").val(0);
-		parent.find(".pattern-img").attr('src', wp_imgs.img_example);
-		parent.addClass("new");
-	});
+	}
 
 	function subir_pattern(element) {
 

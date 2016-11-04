@@ -1,6 +1,10 @@
 <?php
-	if (!isset($k))
+	if (!isset($k)) {
 		$k = "%s";
+		$id = "%id";
+	} else {
+		$id = "tpl-" . $k;
+	}
 
 	$descr = "";
 	$img_id = 0;
@@ -19,8 +23,7 @@
 	
 ?>
 
-
-<div class="tpl tpl1" data-i="<?= $k; ?>" id="%id">
+<div class="tpl tpl1 closed" data-i="<?= $k; ?>" id="<?= $id; ?>">
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl1" />
 
 	<header>

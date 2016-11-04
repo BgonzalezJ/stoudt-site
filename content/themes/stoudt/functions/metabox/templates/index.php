@@ -25,6 +25,8 @@
 			wp_enqueue_media();
 			wp_register_script( 'tpls', get_template_directory_uri() . '/functions/metabox/templates/js/tpls.js', array( 'jquery', 'wp-color-picker' ) );
 
+			wp_register_script("sortable", "https://code.jquery.com/ui/1.12.1/jquery-ui.js", array('jquery'));
+
 			wp_localize_script('tpls', 'wp_dir', [
 				'dir' => get_template_directory_uri() . '/functions/metabox/templates/templates/'
 			]);

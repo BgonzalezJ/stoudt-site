@@ -1,6 +1,10 @@
 <?php
-	if (!isset($k))
+	if (!isset($k)) {
 		$k = "%s";
+		$id = "%id";
+	} else {
+		$id = "tpl-" . $k;
+	}
 
 	$descr = "";
 	$img_id = 0;
@@ -22,7 +26,7 @@
 	}
 ?>
 
-<div class="tpl tpl4" data-i="<?= $k; ?>" id="%id">
+<div class="tpl tpl4 closed" data-i="<?= $k; ?>" id="<?= $id; ?>">
 
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl4" />
 
@@ -38,13 +42,13 @@
 		<div>
 			<label>
 				<span>Margin Top:</span>
-				<input type="number" value="<?= $margins["top"]; ?>" name="tpl[<?= $k; ?>][margin][top]" /> px
+				<input type="number" value="<?= $margins["top"]; ?>" name="tpl[<?= $k; ?>][margin][top]" class="tpl-margin-top" /> px
 			</label>
 		</div>
 		<div>
 			<label>
 				<span>Margin Bottom:</span>
-				<input type="number" value="<?= $margins["bottom"]; ?>" name="tpl[<?= $k; ?>][margin][bottom]" /> px
+				<input type="number" value="<?= $margins["bottom"]; ?>" name="tpl[<?= $k; ?>][margin][bottom]" class="tpl-margin-bottom" /> px
 			</label>
 		</div>	
 	</div>
