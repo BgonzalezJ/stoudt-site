@@ -6,3 +6,4 @@
 /wp/
 /vendor/
 wp-config.php
+/content/themes/*.zip
