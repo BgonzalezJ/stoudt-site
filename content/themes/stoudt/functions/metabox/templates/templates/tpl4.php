@@ -26,7 +26,7 @@
 	}
 ?>
 
-<div class="tpl tpl4 closed" data-i="<?= $k; ?>" id="<?= $id; ?>">
+<div class="tpl tpl4" data-i="<?= $k; ?>" id="<?= $id; ?>">
 
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl4" />
 

@@ -18,6 +18,10 @@
 	<button id="add-tpl" class="button button-primary">Añadir</button>
 </div>
 
+<div class="btn-close-tpls">
+	<button id="close-tpls" class="button button-primary opened">Cerrar todo</button>
+</div>
+
 <div id="views-tpls">
 	
 	<?php foreach ($tpls as $k => $tpl): $tpl = (object) $tpl; ?>

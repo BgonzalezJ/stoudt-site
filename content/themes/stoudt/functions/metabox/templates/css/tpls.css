@@ -10,6 +10,11 @@
 	border-radius: 10px;
 }
 
+.btn-close-tpls {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .tpl header {
 	overflow: hidden;
 	margin-bottom: 20px;

@@ -32,6 +32,19 @@ jQuery(function ($) {
 		});
 	});
 
+	$("#close-tpls").click(function(e) {
+		e.preventDefault();
+		if ($(this).hasClass("opened")) {
+			$(this).removeClass("opened");
+			$(this).text("Abrir todo");
+			$(".tpl").addClass("closed");
+		} else {
+			$(this).addClass("opened");
+			$(this).text("Cerrar todo");
+			$(".tpl").removeClass("closed");
+		}
+	});
+
 	$("body").on("click", ".tpl .show", function (e){
 		e.preventDefault();
 		if (!$(this).parent().parent().hasClass("closed"))
