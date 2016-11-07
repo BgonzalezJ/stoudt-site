@@ -51,6 +51,8 @@
 			var top = 50;
 			if ($(window).width() > 767)
 				top = 70;
+
+			top += 20;
 			var cover = $(".home-cover");
 			var wave = $(".home-cover .wave");
 			var height = cover.height() - wave.height();

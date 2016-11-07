@@ -14,7 +14,6 @@
 
 
 <div class="home-cover cover">
-	<!-- <div class="cover"></div> -->
 	<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" class="img-center" />
 	<div class="wave"></div>
 

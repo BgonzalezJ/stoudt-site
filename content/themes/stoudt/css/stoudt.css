@@ -252,6 +252,7 @@ a {
 	overflow: hidden;
 	text-align: center;
 	background: #fde03e;
+	padding: 20px 0px;
 }
 
 .home-cover:before {
@@ -266,7 +267,7 @@ a {
     left: 0px;
     right: 0px;
     margin: auto;
-    width: 60%;
+    width: 70%;
 }
 
 /*.home-cover div.cover {
