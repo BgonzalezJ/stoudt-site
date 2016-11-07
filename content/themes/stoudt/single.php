@@ -12,37 +12,30 @@ $bg_color = get_field("_bg_color_cover");
 ?>
 
 <style>
-	.single .cover .bg {
-		<?php if (get_post_thumbnail_id() != 0): ?>
-			background: url(<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);
-		<?php else: ?>
+	.single .cover .bg-color {
+		<?php if (get_post_thumbnail_id() == 0): ?>
 			background: <?= $bg_color; ?>;
 		<?php endif; ?>
-		background-attachment: fixed;
-    	background-position: center 70px;
-    	background-repeat: no-repeat;
-    	background-size: 100%;
-    	margin: auto;
 	}
 
 	<?php if (is_array($image_cover)): ?>
-		.single .cover img {
+		.single .cover img.img-center-cover {
 			max-width: <?= $image_cover["width"];?>px;
 		}
 	<?php endif; ?>
-
-	@media (max-width: 767px) {
-		.single .cover .bg {
-			background-position: center 50px;
-		}
-	}
 </style>
 
 <header class="cover">
-	<div class="bg"></div>
-	<?php if (is_array($image_cover)): ?>
-		 <img src="<?= $image_cover["url"]; ?>" />
+	<?php if (get_post_thumbnail_id() == 0): ?>
+		<div class="bg-color"></div>
+	<?php else: ?>
+			<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" class="bg" />
 	<?php endif; ?>
+	<?php if (is_array($image_cover)): ?>
+		 <img src="<?= $image_cover["url"]; ?>" class="img-center-cover" />
+	<?php endif; ?>
+
+	<div class="protector"></div>
 
 </header>
 

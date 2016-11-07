@@ -29,7 +29,7 @@ jQuery(function ($){
 	set_height_iframe();
 
 	var centerImageCover = function () {
-		var imgcenter = $(".single .cover img");
+		var imgcenter = $(".single .cover img.img-center-cover");
 		if (imgcenter.length > 0) {
 			var top = 50;
 			if ($(window).width() > 767)
@@ -40,7 +40,7 @@ jQuery(function ($){
 		}
 	}
 
-	$(".single .cover img").load(function (){
+	$(".single .cover img.img-center-cover").load(function (){
 		centerImageCover();
 	}).each(function(){
 		if (this.complete) $(this).load();
