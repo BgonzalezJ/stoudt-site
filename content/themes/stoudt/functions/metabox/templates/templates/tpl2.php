@@ -13,6 +13,10 @@
 	$margins = ["top" => 100, "bottom" => 100];
 	$fullsize = false;
 	$custom_list = 3;
+	$color = "";
+
+	$pattern_id = 0;
+	$pattern = $img_example;
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
@@ -22,6 +26,12 @@
 		$fullsize = isset($tpl->fullsize) ? true : false;
 		$custom_list = isset($tpl->custom_list) ? $tpl->custom_list : 3;
 		$margins = isset($tpl->margin) ? $tpl->margin : ["top" => 100, "bottom" => 100];
+
+		$color = $tpl->bgcolor;
+		$pattern_id = isset($tpl->pattern) ? $tpl->pattern : 0;
+		$pattern = wp_get_attachment_image_src( $pattern_id, 'full' )[0];
+		if (empty($pattern))
+			$pattern = $img_example;
 	}
 ?>
 
@@ -50,6 +60,22 @@
 				<input type="number" value="<?= $margins["bottom"]; ?>" name="tpl[<?= $k; ?>][margin][bottom]" class="tpl-margin-bottom" /> px
 			</label>
 		</div>	
+	</div>
+
+	<div class="color-container">
+		
+		<input type="text" class="color-picker" value="<?= $color; ?>" name="tpl[<?= $k; ?>][bgcolor]" />
+		
+		<div class="pattern-container">
+			<a href="#" class="tpl-pattern">Añadir patrón</a>
+			<div class="tpl-pattern-box <?= $pattern_id == 0 ? "new" : ""; ?>">
+				<input type="hidden" name="tpl[<?= $k; ?>][pattern]" value="<?= $pattern_id; ?>" class="pattern-id" />
+				<img src="<?= $pattern; ?>" class="pattern-img" />
+				<div class="remove-img">
+					<a href="#"><img src="<?= $remove_img; ?>" /></a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="radio-container">

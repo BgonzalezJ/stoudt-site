@@ -21,9 +21,9 @@ a {
 
 /* Templates */
 
-.tpl {
-	margin-top: 100px;
-	margin-bottom: 100px;
+.tpl-bg-padding {
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .tpl img {
@@ -35,7 +35,7 @@ a {
 }
 
 .tpl1 .descr-content {
-	margin-bottom: 30px;
+	margin-bottom: 60px;
 }
 
 .tpl1.side img {
@@ -61,12 +61,12 @@ a {
 }
 
 .tpl2 .descr-content {
-	margin-bottom: 30px;
+	margin-bottom: 60px;
 }
 
 .tpl2 .descr-content p {
-	max-width: 500px;
 	margin: auto;
+	max-width: 767px;
 }
 
 .tpl2 .img-content {
