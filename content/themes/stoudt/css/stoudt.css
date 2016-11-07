@@ -429,6 +429,12 @@ a {
 	min-width: 200px;
 	display: inline-block;
 	margin-top: 50px;
+	transition: border-color .2s, color .2s;
+}
+
+.single .link-to-another-site:hover{
+	border-color: #000;
+	color: #000;
 }
 
 .single iframe,
