@@ -6,10 +6,19 @@
 
 <?php get_header(); ?>
 
+<style>
+	.home-cover .img-center {
+		max-width: <?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[1]; ?>px;
+	}
+</style>
+
 
 <div class="home-cover cover">
-	<div class="cover"></div>
+	<!-- <div class="cover"></div> -->
+	<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" class="img-center" />
 	<div class="wave"></div>
+
+	<div class="protector"></div>
 </div>
 
 <section class="projects">

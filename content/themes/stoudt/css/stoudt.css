@@ -13,6 +13,15 @@ a {
 	text-decoration: none!important;
 }
 
+.protector {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	background: transparent;
+}
+
 /* Covers */
 
 .cover img {
@@ -243,10 +252,24 @@ a {
 	overflow: hidden;
 	text-align: center;
 	background: #fde03e;
-	margin-bottom: 80px;
 }
 
-.home-cover div.cover {
+.home-cover:before {
+	display: block;
+	content: '';
+	padding-top: 39.0625%;
+}
+
+.home-cover img.img-center {
+	top: 70px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width: 60%;
+}
+
+/*.home-cover div.cover {
 	background: url(../img/home-cover.png);
 	background-attachment: fixed;
     background-position: center 115px;
@@ -268,7 +291,7 @@ a {
 		background-size: 85%;
 		background-position: center 75px;
 	}
-}
+}*/
 
 .home-cover img.wave {
 	width: 100%;
@@ -300,6 +323,9 @@ a {
 
 .projects {
 	padding: 0px 15px;
+	padding-top: 80px;
+	position: relative;
+	background: #fff;
 }
 
 .projects .intro {
@@ -329,8 +355,9 @@ a {
 }
 
 @media (max-width: 767px) {
-	.home-cover {
-		margin-bottom: 30px;
+
+	.projects {
+		padding-top: 30px;
 	}
 
 	.projects .list-projects {
@@ -383,15 +410,6 @@ a {
     left: 0px;
     margin: auto;
     width: 90%;
-}
-
-.single .cover .protector {
-	position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    background: transparent;
-    height: 100%;
 }
 
 .single .template-project-container {

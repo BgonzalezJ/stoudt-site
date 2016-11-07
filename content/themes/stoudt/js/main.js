@@ -44,4 +44,28 @@
  		showMenu();
  		showProjects();
  	});
+
+ 	var centerImageHomeCover = function () {
+		var imgcenter = $(".home-cover img.img-center");
+		if (imgcenter.length > 0) {
+			var top = 50;
+			if ($(window).width() > 767)
+				top = 70;
+			var cover = $(".home-cover");
+			var wave = $(".home-cover .wave");
+			var height = cover.height() - wave.height();
+			var center = ((height - imgcenter.height()) / 2) + top;
+			imgcenter.css("top", center);
+		}
+	}
+
+	$(".home-cover img.img-center").load(function (){
+		centerImageHomeCover();
+	}).each(function(){
+		if (this.complete) $(this).load();
+	});
+
+	$(window).resize(function () {
+		centerImageHomeCover();
+	});
  });
