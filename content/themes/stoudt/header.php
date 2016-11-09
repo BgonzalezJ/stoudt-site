@@ -63,31 +63,7 @@
 							<div class="pull-right menu">
 								<?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?> 
 
-								<ul class="rrss">
-									<li>
-										<a href="#" target="_blank">
-											<i class="fa fa-dribbble"></i>
-										</a>
-									</li>
-
-									<li>
-										<a href="http://chrisstoudt.tumblr.com/" target="_blank">
-											<i class="fa fa-tumblr"></i>
-										</a>
-									</li>
-
-									<li>
-										<a href="https://www.linkedin.com/in/christian-stoudt-14591b33" target="_blank">
-											<i class="fa fa-linkedin"></i>
-										</a>
-									</li>
-
-									<li>
-										<a href="https://www.instagram.com/chrisstoudt_sketchbook/" target="_blank">
-											<i class="fa fa-instagram"></i>
-										</a>
-									</li>
-								</ul>
+								<?php wp_nav_menu(array('theme_location' => 'rrss', 'container' => false, 'menu_class' => 'rrss', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?>
 							</div>
 
 							<?php dynamic_sidebar('navbar-right'); ?> 

@@ -17,7 +17,8 @@
       "wpackagist-plugin/wp-subtitle" :"*",
       "wpackagist-plugin/advanced-custom-fields":"*",
       "wpackagist-plugin/metronet-reorder-posts":"*",
-      "wpackagist-plugin/wordpress-importer":"*"
+      "wpackagist-plugin/wordpress-importer":"*",
+      "wpackagist-plugin/menu-social-icons":"*"
     },
     "repositories":[
         {
