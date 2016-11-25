@@ -12,18 +12,22 @@
 					<?= $tpl->descr; ?>
 				</div>
 			<?php endif; ?>
-			<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12 text-right img-content pull-left">
-				<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" />	
-			</div>
+			<?php if ($tpl->img != 0): ?>
+				<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12 text-right img-content pull-left">
+					<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" style="max-width: <?= wp_get_attachment_image_src( $tpl->img, 'full' )[1]; ?>px;" />	
+				</div>
+			<?php endif; ?>
 		<?php else: ?>
 			<?php if (!empty($tpl->descr)): ?>
 				<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 text-center descr-content">
 					<?= $tpl->descr; ?>
 				</div>
 			<?php endif; ?>
-			<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 text-center img-content">
-				<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" />	
-			</div>
+			<?php if ($tpl->img != 0): ?>
+				<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 text-center img-content">
+					<img src="<?= wp_get_attachment_image_src( $tpl->img, 'full' )[0]; ?>" style="max-width: <?= wp_get_attachment_image_src( $tpl->img, 'full' )[1]; ?>px;" />	
+				</div>
+			<?php endif; ?>
 		<?php endif; ?>
 	</div>
 </div>

@@ -48,6 +48,7 @@ $bg_color = get_field("_bg_color_cover");
 				case 'tpl3': require 'project_templates/tpl3.php'; break;
 				case 'tpl4': require 'project_templates/tpl4.php'; break;
 				case 'tpl5': require 'project_templates/tpl5.php'; break;
+				case 'tpl6': require 'project_templates/tpl6.php'; break;
 			}
 		endforeach;
 	?>

@@ -92,8 +92,9 @@ jQuery(function ($) {
 			$(this).attr("data-i", i);
 			$(this).find(".tpl-type").attr("name","tpl["+i+"][tpl]");
 			$(this).find(".tpl-descr").attr("name","tpl["+i+"][descr]");
-			if ($(this).hasClass("tpl2"))
+			if ($(this).hasClass("multiple")) {
 				$(this).find(".attachment-id").attr("name","tpl["+i+"][img][]");
+			}
 			else
 				$(this).find(".attachment-id").attr("name","tpl["+i+"][img]");
 			$(this).find(".link-video").attr("name","tpl["+i+"][video]");
@@ -106,6 +107,7 @@ jQuery(function ($) {
 			$(this).find(".fullsize").attr("name","tpl["+i+"][fullsize]");
 			$(this).find(".tpl-margin-top").attr("name","tpl["+i+"][margin][top]");
 			$(this).find(".tpl-margin-bottom").attr("name","tpl["+i+"][margin][bottom]");
+			$(this).find(".dvice").attr("name","tpl["+i+"][device]");
 		});
 	}
 
@@ -175,7 +177,7 @@ jQuery(function ($) {
 			$(image_frame.id).find(".attachment-id:eq("+l+")").val(media_attachment.id);
 			$(image_frame.id).find(".tpl-img-box:eq("+l+")").removeClass("new");
 
-			if ($(image_frame.id).hasClass("tpl2")) {
+			if ($(image_frame.id).hasClass("multiple")) {
 				var index = $(image_frame.id).data().i;
 				var img = '<div class="tpl-img-box new">';
 					img += "<input type='hidden' name='tpl["+index+"][img][]' value='0' class='attachment-id' />";

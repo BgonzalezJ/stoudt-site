@@ -14,6 +14,7 @@
 		<option value="tpl3.php">Fullsize image</option>
 		<option value="tpl4.php">Image + BG color or pattern</option>
 		<option value="tpl5.php">Video</option>
+		<option value="tpl6.php">Slider</option>
 	</select>
 	<button id="add-tpl" class="button button-primary">Añadir</button>
 </div>

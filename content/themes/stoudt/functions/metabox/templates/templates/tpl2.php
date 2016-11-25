@@ -16,7 +16,8 @@
 	$color = "";
 
 	$pattern_id = 0;
-	$pattern = $img_example;
+	if (isset($img_example))
+		$pattern = $img_example;
 
 	if (isset($tpl)) {
 		$descr = $tpl->descr;
@@ -35,7 +36,7 @@
 	}
 ?>
 
-<div class="tpl tpl2" data-i="<?= $k; ?>" id="<?= $id; ?>">
+<div class="tpl tpl2 multiple" data-i="<?= $k; ?>" id="<?= $id; ?>">
 
 	<input type="hidden" name="tpl[<?= $k; ?>][tpl]" class="tpl-type" value="tpl2" />
 
