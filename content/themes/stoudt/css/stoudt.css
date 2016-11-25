@@ -453,7 +453,8 @@ a {
     right: 0px;
     left: 0px;
     margin: auto;
-    width: 90%;
+    width: auto;
+    height: 90%;
 }
 
 .single .template-project-container {

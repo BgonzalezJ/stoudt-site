@@ -35,6 +35,14 @@ jQuery(function ($){
 			if ($(window).width() > 767)
 				top = 70;
 			var cover = $(".single .cover");
+
+			height90percent = cover.height() * 0.9;
+			console.log(imgcenter.data().height);
+			if (height90percent > imgcenter.data().height)
+				height90percent = imgcenter.data().height;
+
+			imgcenter.height(height90percent);
+
 			var center = ((cover.height() - imgcenter.height()) / 2) + top;
 			imgcenter.css("top", center);
 		}

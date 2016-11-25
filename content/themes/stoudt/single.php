@@ -21,6 +21,7 @@ $bg_color = get_field("_bg_color_cover");
 	<?php if (is_array($image_cover)): ?>
 		.single .cover img.img-center-cover {
 			max-width: <?= $image_cover["width"];?>px;
+			max-height: <?= $image_cover["height"];?>px;
 		}
 	<?php endif; ?>
 </style>
@@ -32,7 +33,7 @@ $bg_color = get_field("_bg_color_cover");
 			<img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>" class="bg" />
 	<?php endif; ?>
 	<?php if (is_array($image_cover)): ?>
-		 <img src="<?= $image_cover["url"]; ?>" class="img-center-cover" />
+		 <img src="<?= $image_cover["url"]; ?>" data-width="<?= $image_cover["width"]; ?>" data-height="<?= $image_cover["height"]; ?>" class="img-center-cover" />
 	<?php endif; ?>
 
 	<div class="protector"></div>
