@@ -407,6 +407,11 @@ a {
 	.projects .list-projects {
 		margin-top: 30px;
 	}
+
+	.projects .list-projects ul li {
+		margin-top: 0px!important;
+		opacity: 1!important;
+	}
 }
 
 /* Single Project */
@@ -642,6 +647,11 @@ ul.skills li.bullet:after {
 @media (max-width: 767px) {
 	ul.skills li {
 		font-size: 12px;
+	}
+
+	ul.skills li.bullet:after {
+		height: 3px;
+		width: 3px;
 	}
 }
 
