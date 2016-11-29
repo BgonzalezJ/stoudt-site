@@ -23,9 +23,19 @@
 
 						<?php wp_nav_menu(array('theme_location' => 'rrss', 'container' => false, 'menu_class' => 'rrss', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?>
 
-						<p class="text-center download-portfolio">
-							<a href="<?= wp_get_attachment_url(get_option("_portfolio_uploaded", 0)); ?>" target="_blank">Download my portfolio</a>
+
+						<?php if (get_option("_portfolio_uploaded", 0) != 0): ?>
+							<p class="text-center download-portfolio">
+								<a href="<?= wp_get_attachment_url(get_option("_portfolio_uploaded", 0)); ?>" target="_blank">Download my portfolio</a>
+							</p>
+						<?php endif; ?>
+
+						<?php $email = get_option("_contact_email", "christian.stoudt@gmail.com"); ?>
+
+						<p class="text-center contact-email-container">
+							<a href="mailto:<?= $email ?>" class="contact-email"><?= $email ?></a>
 						</p>
+
 
 						<p class="text-center developed-by">
 							<span>Developed by Bastián González</span>
