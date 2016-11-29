@@ -68,9 +68,10 @@
 							<h2><?= get_the_subtitle(get_the_ID()); ?></h2>
 							<?php the_content(); ?>
 
-							<p>Get in touch:</p>
-
-							<a href="mailto:<?= $email ?>" class="btn contact-email"><?= $email ?></a>
+							<div class="contact">
+								<p>Get in touch:</p>
+								<a href="mailto:<?= $email ?>" class="btn contact-email"><?= $email ?></a>
+							</div>
 						</div>
 
 					</div>
