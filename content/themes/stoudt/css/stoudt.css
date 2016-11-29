@@ -579,9 +579,15 @@ a {
 }
 
 @media (max-width: 767px) {
+
+	#about {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
 	#about .text {
 		text-align: center!important;
-		margin-bottom: 20px;
+		margin-bottom: 100px;
 	}
 }
 
