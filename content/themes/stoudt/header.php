@@ -36,7 +36,7 @@
 							<div class="pull-left brand-name-mobile visible-xs">
 								<span>
 									<a href="<?= home_url("/"); ?>">
-										<?= get_bloginfo();?>
+										<?= logo_or_name();?>
 									</a>
 								</span>
 							</div>
@@ -55,7 +55,7 @@
 							<div class="pull-left brand-name hidden-xs">
 								<span>
 									<a href="<?= home_url("/"); ?>">
-										<?= get_bloginfo();?>
+										<?= logo_or_name();?>
 									</a>
 								</span>
 							</div>

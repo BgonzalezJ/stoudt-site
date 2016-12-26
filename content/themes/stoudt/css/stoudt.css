@@ -13,6 +13,19 @@ a {
 	text-decoration: none!important;
 }
 
+.logo-stoudt {
+	height: 35px;
+	width: auto;
+	margin-top: -8px;
+}
+
+@media (max-width: 767px) {
+	.logo-stoudt {
+		margin-top: -6px;
+		margin-left: -10px;
+	}
+}
+
 .protector {
 	width: 100%;
 	position: absolute;
