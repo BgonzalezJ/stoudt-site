@@ -72,4 +72,8 @@
 	.delete-box {
 		margin-top: 40px;
 	}
+
+	.delete-logo {
+		cursor: pointer;
+	}
 </style>

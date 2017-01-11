@@ -40,12 +40,15 @@
 
 	function logo_or_name() {
 		$id = get_option("_stoudt_logo", 0);
+		$hover_id = get_option("_stoudt_logo_hover", 0);
 
-		if ($id == 0)
-			return get_bloginfo();
+		if ($id == 0 || $hover_id == 0)
+			return "<div class='text'>" . get_bloginfo() . "</div>";
 		else {
 			$url = wp_get_attachment_url($id);
+			$url_hover = wp_get_attachment_url($hover_id);
 			$img = "<img src='".$url."' class='logo-stoudt' />";
+			$img .= "<img src='".$url_hover."' class='logo-stoudt hover' />";
 			return $img;			
 		}
 	}

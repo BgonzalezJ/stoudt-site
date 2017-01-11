@@ -16,13 +16,24 @@ a {
 .logo-stoudt {
 	height: 20px;
 	width: auto;
-	margin-top: -8px;
+	position: absolute;
+	top: 25px;
+	transition: opacity .3s;
+}
+.logo-stoudt.hover,
+.logo-stoudt:hover {
+	opacity: 0;
+}
+
+
+.logo-stoudt.hover:hover {
+	opacity: 1;
 }
 
 @media (max-width: 767px) {
 	.logo-stoudt {
-		margin-top: -6px;
-		margin-left: -10px;
+		top: 15px;
+		left: 15px;
 	}
 }
 
@@ -237,14 +248,23 @@ a {
 }
 
 #main-menu .brand-name {
-	padding: 15px 0px;
 	font-size: 28px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+#main-menu .brand-name .text {
+	padding: 15px 0px;
 }
 
 #main-menu .brand-name-mobile {
-    padding: 8px 25px;
     font-size: 24px;
     text-transform: uppercase;
+    position: relative;
+}
+
+#main-menu .brand-name-mobile .text {
+	padding: 8px 25px;
 }
 
 #main-menu .menu {
