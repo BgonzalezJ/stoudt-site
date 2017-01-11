@@ -305,6 +305,38 @@ a {
 }
 
 @media (max-width: 767px) {
+
+	.stoudt-navbar {
+		position: fixed;
+		top: -1000px;
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+    	transform: scale(0);
+    	background: #fff;
+    	width: 100%;
+    	transition: transform .3s;
+    	display: table!important;
+	}
+
+	.close-stoudt-navbar {
+		position: fixed;
+		right: 30px;
+		top: 15px;
+		font-size: 24px;
+		z-index: 99999;
+	}
+
+	.stoudt-navbar.height {
+		top: 0px;
+		bottom: 0px;
+	}
+
+	.stoudt-navbar.in {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+    	transform: scale(1);
+	}
+
 	#main-menu {
 		overflow: auto;
 		max-height: inherit!important;
@@ -319,6 +351,17 @@ a {
 		float: none!important;
 	}
 
+	#main-menu .menu {
+		display: table-cell;
+    	vertical-align: middle;
+    	opacity: 0;
+    	transition: opacity .5s;
+	}
+
+	#main-menu .menu.open {
+		opacity: 1;
+	}
+
 	#main-menu .brand-name {
 		text-align: center;
 	}
@@ -329,9 +372,22 @@ a {
 
 	#main-menu .navbar-collapse div > ul li {
 		float: none;
+		text-align: center;
+	}
+
+	#main-menu .menu > ul li {
+		margin-top: 50px;
+		opacity: 0;
+		transition: margin-top .5s, opacity .5s;
+	}
+
+	#main-menu .menu.open > ul li {
+		margin-top: 0px;
+		opacity: 1;
 	}
 
 	#main-menu .rrss {
+		margin-top: 50px!important;
 		text-align: center;
 	}
 
