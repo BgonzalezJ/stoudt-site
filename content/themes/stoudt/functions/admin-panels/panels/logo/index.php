@@ -14,9 +14,12 @@
 
 
 	function stoudt_save_data_upload_logo() {
-		if (isset($_POST["attachment_id"])) {
+		if (isset($_POST["attachment_id"]) 
+			&& isset($_POST["attachment_hover_id"])) {
 			$id = $_POST["attachment_id"];
+			$hover_id = $_POST["attachment_hover_id"];
 			update_option("_stoudt_logo", $id);
+			update_option("_stoudt_logo_hover", $hover_id);
 		}
 	}
 
