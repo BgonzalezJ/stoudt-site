@@ -10,12 +10,12 @@
  	$(".navbar-toggle").click(function () {
  		$(".stoudt-navbar").height($(window).height());
  		$(".stoudt-navbar").removeClass("collapse").addClass("height");
- 		$("body").addClass("noscroll");
- 		$("html").addClass("noscroll");
- 		$("body").height($(window).height());
  		setTimeout(function() {
  			$(".stoudt-navbar").addClass("in");
  			setTimeout(function() {
+ 				$("body").addClass("noscroll");
+ 				$("html").addClass("noscroll");
+ 				$("body").height($(window).height());
  				$(".stoudt-navbar .menu").addClass("open");
  			}, 300);
  		}, 300);
