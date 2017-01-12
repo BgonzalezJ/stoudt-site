@@ -376,13 +376,17 @@ a {
 	}
 
 	#main-menu .menu > ul li {
-		margin-top: 50px;
+		margin-bottom: 50px;
 		opacity: 0;
-		transition: margin-top .5s, opacity .5s;
+		transition: margin-bottom .5s, opacity .5s;
+	}
+
+	.navbar-nav li {
+		font-size: 24px;
 	}
 
 	#main-menu .menu.open > ul li {
-		margin-top: 0px;
+		margin-bottom: 20px;
 		opacity: 1;
 	}
 
@@ -393,6 +397,14 @@ a {
 
 	#main-menu .rrss li {
 		display: inline-block!important;
+		width: 45px;
+		height: 45px;
+	}
+
+	#main-menu .rrss li a {
+		font-size: 26px;
+	    display: block;
+	    margin-top: 1px;
 	}
 
 	#content {
