@@ -11,6 +11,8 @@
  		$(".stoudt-navbar").height($(window).height());
  		$(".stoudt-navbar").removeClass("collapse").addClass("height");
  		$("body").addClass("noscroll");
+ 		$("html").addClass("noscroll");
+ 		$("body").height($(window).height());
  		setTimeout(function() {
  			$(".stoudt-navbar").addClass("in");
  			setTimeout(function() {
@@ -23,6 +25,8 @@
  	$(".close-stoudt-navbar").click(function () {
  		$(".stoudt-navbar .menu").removeClass("open");
  		$("body").removeClass("noscroll");
+ 		$("html").removeClass("noscroll");
+ 		$("body").removeAttr("style");
  		setTimeout(function() {
  			$(".stoudt-navbar").removeClass("in");	
  			setTimeout(function() {
