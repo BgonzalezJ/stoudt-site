@@ -52,7 +52,7 @@
 
 						<!-- navbar-collapse navbar-primary-collapse stoudt-navbar collapse in -->
 						
-						<div class="collapse navbar-collapse navbar-primary-collapse stoudt-navbar">
+						<div class="collapse navbar-collapse navbar-primary-collapse hidden-xs">
 							
 							<div class="pull-left brand-name hidden-xs">
 								<span>
@@ -61,10 +61,6 @@
 									</a>
 								</span>
 							</div>
-
-							<a href="#" class="visible-xs close-stoudt-navbar">
-								<i class="fa fa-times"></i>
-							</a>
 
 							<div class="pull-right menu">
 								<?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?> 

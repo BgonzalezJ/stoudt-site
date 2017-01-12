@@ -13,17 +13,20 @@
  		setTimeout(function() {
  			$(".stoudt-navbar").addClass("in");
  			setTimeout(function() {
- 				$("#main-menu .menu").addClass("open");
+ 				$(".stoudt-navbar .menu").addClass("open");
  			}, 300);
  		}, 300);
  		
  	});
 
  	$(".close-stoudt-navbar").click(function () {
- 		$(".stoudt-navbar").removeClass("in");
+ 		$(".stoudt-navbar .menu").removeClass("open");
  		setTimeout(function() {
- 			$(".stoudt-navbar").removeClass("height");
- 			$("#main-menu .menu").removeClass("open");
+ 			$(".stoudt-navbar").removeClass("in");	
+ 			setTimeout(function() {
+ 				$(".stoudt-navbar").removeClass("height");
+ 			}, 300);
+ 			
  		}, 300);
  	});
 

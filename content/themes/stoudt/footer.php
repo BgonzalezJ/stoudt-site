@@ -49,5 +49,17 @@
 		
 		<!--wordpress footer-->
 		<?php wp_footer(); ?> 
+
+		<div class="collapse stoudt-navbar visible-xs">
+			<a href="#" class="visible-xs close-stoudt-navbar">
+				<img src="<?= get_template_directory_uri() ?>/img/x.png" />
+			</a>
+
+			<div class="pull-right menu">
+				<?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?> 
+
+				<?php wp_nav_menu(array('theme_location' => 'rrss', 'container' => false, 'menu_class' => 'rrss', 'walker' => new BootstrapBasicMyWalkerNavMenu())); ?>
+			</div>
+		</div>
 	</body>
 </html>
