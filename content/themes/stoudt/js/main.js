@@ -12,10 +12,10 @@
  		$(".stoudt-navbar").removeClass("collapse").addClass("height");
  		setTimeout(function() {
  			$(".stoudt-navbar").addClass("in");
+ 			$("body").addClass("noscroll");
+			$("html").addClass("noscroll");
+			$("body").height($(window).height());
  			setTimeout(function() {
- 				$("body").addClass("noscroll");
- 				$("html").addClass("noscroll");
- 				$("body").height($(window).height());
  				$(".stoudt-navbar .menu").addClass("open");
  			}, 300);
  		}, 300);
