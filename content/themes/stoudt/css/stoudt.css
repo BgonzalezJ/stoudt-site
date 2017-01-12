@@ -4,6 +4,10 @@ html, body {
 	color: #999;
 }
 
+body.noscroll {
+	overflow: hidden;
+}
+
 #site-header .main-navigation,
 #site-footer .site-footer {
 	margin: 0px;

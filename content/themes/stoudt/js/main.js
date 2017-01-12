@@ -10,6 +10,7 @@
  	$(".navbar-toggle").click(function () {
  		$(".stoudt-navbar").height($(window).height());
  		$(".stoudt-navbar").removeClass("collapse").addClass("height");
+ 		$("body").addClass("noscroll");
  		setTimeout(function() {
  			$(".stoudt-navbar").addClass("in");
  			setTimeout(function() {
@@ -21,6 +22,7 @@
 
  	$(".close-stoudt-navbar").click(function () {
  		$(".stoudt-navbar .menu").removeClass("open");
+ 		$("body").removeClass("noscroll");
  		setTimeout(function() {
  			$(".stoudt-navbar").removeClass("in");	
  			setTimeout(function() {
