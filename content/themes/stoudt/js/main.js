@@ -99,4 +99,37 @@
 	$(window).resize(function () {
 		centerImageHomeCover();
 	});
+
+	// Skills
+
+	if (window.home) {
+		$(".skills li a").click(function () {
+			
+
+			if (!$(this).parent().hasClass("active")) {
+				$(".skills li").removeClass("active");
+				var category = $(this).data("category");
+				$(".skills li." + category).addClass("active");
+				if (!$(this).parent().hasClass("all-projects")) {
+					$(".list-projects .project").addClass("fadeOut");
+					setTimeout(function () {
+						$(".list-projects .project").addClass("hide");
+						$(".list-projects .project." + category).removeClass("hide");
+						$(".list-projects .project." + category).removeClass("fadeOut");	
+					}, 350);
+				} else {
+					$(".list-projects .project").addClass("fadeOut");
+					setTimeout(function () {
+						$(".list-projects .project").removeClass("hide");
+						$(".list-projects .project").removeClass("fadeOut");
+					}, 350);	
+				}
+			}
+			return false;
+		});
+	} else {
+		$(".skills li a").click(function () {
+			return false;
+		});
+	}
  });

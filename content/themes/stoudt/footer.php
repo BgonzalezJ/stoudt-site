@@ -1,3 +1,4 @@
+<?php $categories = get_categories(); ?>
 <?php
 /**
  * The theme footer
@@ -12,12 +13,18 @@
 			<footer id="site-footer" role="contentinfo">
 				<div id="footer-row" class="row site-footer">
 
-					<ul class="skills">
-						<li class="bullet">UI/UX DESIGN</li>
-						<li class="bullet">WEBSITES</li>
-						<li class="bullet">BRANDING</li>
-						<li>ILLUSTRATION</li>
-					</ul>
+					<!-- <ul class="skills">
+						<li class="bullet all-projects">
+							<a href="#" data-category="all-projects">All</a>
+						</li>
+						<?php foreach ($categories as $category): ?>
+							<?php if ($category->slug != "uncategorized" && $category->slug != "sin-categoria"): ?>
+								<li class="bullet <?= $category->slug ?>">
+									<a href="#" data-category="<?= $category->slug ?>"><?= $category->name ?></a>
+								</li>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</ul> -->
 
 					<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 

@@ -8,6 +8,14 @@
 	            'post_type' => 'post'
 	        )
 	    );
+
+	    new MultiPostThumbnails(
+	        array(
+	            'label' => 'Imagen hover Home',
+	            'id' => 'secondary-image-hover',
+	            'post_type' => 'post'
+	        )
+	    );
 	}
 
 
