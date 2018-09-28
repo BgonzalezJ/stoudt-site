@@ -525,6 +525,7 @@ a {
 	padding-top: 80px;
 	position: relative;
 	background: #fff;
+	margin-top: -1px;
 }
 
 .projects .intro {
