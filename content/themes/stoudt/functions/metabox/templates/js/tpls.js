@@ -1,5 +1,9 @@
 jQuery(function ($) {
 
+	var templates = {};
+
+	getTemplates();
+
 	$("#views-tpls").sortable({
 		update:  function (v) {
 			resetIndexTpls();
@@ -17,19 +21,17 @@ jQuery(function ($) {
 	$("#add-tpl").click(function (e) {
 		e.preventDefault();
 		var tpl = $("#select-tpl").val();
+		var tplToAdd = templates[tpl].clone();
+		tplToAdd = tplToAdd.prop('outerHTML');
 
-		$.get(wp_dir.dir + tpl, function (r) {
-			if (r) {
-				var l = $("#views-tpls").find(".tpl").length;
-				var id = "id-" + $.now();
-				r = r.replace(/%s/g, l);
-				r = r.replace(/%id/g, id);
-				$("#views-tpls").append(r);
-				$("#" + id).find("img").attr("src", wp_imgs.img_example);
-				tinymce.init({selector: "textarea"});
-				$('.color-picker').wpColorPicker();
-			}
-		});
+		var l = $("#views-tpls").find(".tpl").length;
+		var id = "id-" + $.now();
+		tplToAdd = tplToAdd.replace(/%s/g, l);
+		tplToAdd = tplToAdd.replace(/%id/g, id);
+		$("#views-tpls").append(tplToAdd);
+		$("#" + id).find("img").attr("src", wp_imgs.img_example);
+		tinymce.init({selector: "textarea"});
+		$('.color-picker').wpColorPicker();
 	});
 
 	$("#close-tpls").click(function(e) {
@@ -88,15 +90,16 @@ jQuery(function ($) {
 	});
 
 	function resetIndexTpls() {
-		$.each($(".tpl"), function (i, v) {
+		$.each($("#views-tpls .tpl"), function (i, v) {
 			$(this).attr("data-i", i);
 			$(this).find(".tpl-type").attr("name","tpl["+i+"][tpl]");
 			$(this).find(".tpl-descr").attr("name","tpl["+i+"][descr]");
-			if ($(this).hasClass("multiple")) {
+			
+			if ($(this).hasClass("multiple"))
 				$(this).find(".attachment-id").attr("name","tpl["+i+"][img][]");
-			}
 			else
 				$(this).find(".attachment-id").attr("name","tpl["+i+"][img]");
+			
 			$(this).find(".link-video").attr("name","tpl["+i+"][video]");
 			$(this).find(".pattern-id").attr("name","tpl["+i+"][pattern]");
 			$(this).find(".color-picker").attr("name","tpl["+i+"][bgcolor]");
@@ -143,8 +146,6 @@ jQuery(function ($) {
 		// Opens the media library frame.
 		pattern_frame.open();
 	}
-
-
 
 	function subir_imagen(element) {
 
@@ -196,5 +197,17 @@ jQuery(function ($) {
  
 		// Opens the media library frame.
 		image_frame.open();
+	}
+
+	function getTemplates() {
+		var tpl;
+		for (var i = 1; i <= 5;i++) {
+			tpl = $("#tpls-to-be-selected").find(".tpl" + i).clone();
+			templates["tpl" + i] = tpl;
+		}
+
+		$("#tpls-to-be-selected").remove();
+
+		console.log(templates);
 	}
 });

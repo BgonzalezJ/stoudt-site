@@ -9,11 +9,11 @@
 <div id="select-tpl-container">
 	<select id="select-tpl">
 		<option selected disabled>Selecciona template</option>
-		<option value="tpl1.php">Single image + text</option>
-		<option value="tpl2.php">Multiple images</option>
-		<option value="tpl3.php">Fullsize image</option>
-		<option value="tpl4.php">Image + BG color or pattern</option>
-		<option value="tpl5.php">Video</option>
+		<option value="tpl1">Single image + text</option>
+		<option value="tpl2">Multiple images</option>
+		<option value="tpl3">Fullsize image</option>
+		<option value="tpl4">Image + BG color or pattern</option>
+		<option value="tpl5">Video</option>
 		<!-- <option value="tpl6.php">Slider</option> -->
 	</select>
 	<button id="add-tpl" class="button button-primary">Añadir</button>
@@ -23,12 +23,24 @@
 	<button id="close-tpls" class="button button-primary opened">Cerrar todo</button>
 </div>
 
-<div id="views-tpls">
-	
+<div id="views-tpls">	
 	<?php foreach ($tpls as $k => $tpl): $tpl = (object) $tpl; ?>
 		<?php
 			if (isset($tpl->tpl))
 				require get_template_directory() . '/functions/metabox/templates/templates/' . $tpl->tpl . '.php';
 		?>
 	<?php endforeach; ?>
+</div>
+
+<?php 
+	unset($k); // LIMPIAMOS ESTA VARIABLE PARA QUE NO AFECTE A LOS TEMPLATES ABAJO 
+	unset($tpl); // LIMPIAMOS ESTA VARIABLE PARA QUE NO AFECTE A LOS TEMPLATES ABAJO 
+?>
+
+<div id="tpls-to-be-selected" style="display: none;">
+	<?php
+		for ($i = 1; $i <= 5;$i++) {
+			require get_template_directory() . '/functions/metabox/templates/templates/tpl' . $i . '.php';
+		}
+	?>
 </div>

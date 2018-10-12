@@ -82,7 +82,6 @@
 							<div class="info">
 								<p>
 									<span class="title"><?= get_the_title(); ?></span>
-									<!-- <span class="subtitle"><?= get_the_subtitle(get_the_ID()); ?></span> -->
 								</p>
 							</div>
 

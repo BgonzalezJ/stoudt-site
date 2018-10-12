@@ -45,8 +45,7 @@
 		}
 
 
-		public static function save($post_id){
-
+		public static function save($post_id) {
 			if (!isset($_POST['tpls_nonce']))
 				return $post_id;
 

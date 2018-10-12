@@ -90,14 +90,24 @@ $bg_color = get_field("_bg_color_cover");
 							<?php if (class_exists('MultiPostThumbnails')):
 							    MultiPostThumbnails::the_post_thumbnail(
 							        get_post_type(),
-							        'secondary-image'
+							        'secondary-image',
+							        get_the_ID(),
+							        'post-thumbnail',
+							        ["class" => "image"]
+							    );
+
+							    MultiPostThumbnails::the_post_thumbnail(
+							        get_post_type(),
+							        'secondary-image-hover',
+							        get_the_ID(),
+							        'post-thumbnail',
+							        ["class" => "image-hover"]
 							    );
 							endif; ?>
 
 							<div class="info">
 								<p>
 									<span class="title"><?= get_the_title(); ?></span>
-									<span class="subtitle"><?= get_the_subtitle(get_the_ID()); ?></span>
 								</p>
 							</div>
 						</div>
